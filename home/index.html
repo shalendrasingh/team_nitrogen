@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mamaearth</title>
+    <link rel="shortcut icon" href="https://mamaearth.in/_next/static/icon_96x96.png">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .lato {
+        font-family: "Lato", sans-serif;
+      }
+      .robo {
+        font-family: "Roboto", sans-serif;
+      }
+      .border {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header ">
+      <div class="offers">
+        <p>Asia's brand with MADE SAFE Certified Products</p>
+        <p>
+          Free Shipping Above 399 | COD Available | Extract 5% OFF on Prepaid
+          Orders | Shop Now
+        </p>
+        <i class="fa fa-user icon-user" aria-hidden="true"></i>
+      </div>
+
+      <div class="brand-nav">
+        <a href="#" class="brand-logo center">
+          <img
+            alt="logo"
+            class="logo"
+            src="https://mamaearthp.imgix.net/wysiwyg/Mamaearth_Goodness_Inside.png?auto=format&w=250"
+          />
+        </a>
+        <div class="input__search">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            class="search"
+            placeholder="Search fro products..."
+          />
+          <button class="search__btn">
+            <i class="fa fa-search icon-search"></i>Search
+          </button>
+        </div>
+        <div class="cart__signIn__div">
+          <button class="cart__btn">
+            <i class="fa fa-shopping-cart icon-cart"></i>Cart
+          </button>
+          <button class="sign__btn">
+            <i class="fa fa-user icon-signin"></i>Sign In
+          </button>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+          <i class="fas fa-bars"></i>
+        </span>
+
+        <ul class="main-nav" id="js-menu">
+          <li>
+            <a href="#" class="nav-links">HOME</a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">BABY</a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">BEAUTY</a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">HAIR</a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">FACE</a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">BODY</a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">GIFT PACKS</a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">ALL PRODUCTS</a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">BLOG</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- code for cousel -->
+    <div class="container-fluid cont">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img
+              src="https://mamaearthp.imgix.net/wysiwyg/Onion-oil-_1920x512_NWtZZRE.jpg?auto=format?auto=format&fit=crop&w=1920"
+              alt="pic 1"
+              style="width: 100%"
+            />
+          </div>
+
+          <div class="item">
+            <img
+              src="https://mamaearthp.imgix.net/wysiwyg/Vitamin-C-Range-_1920x512_r0OlOmX_ehZf5js.jpg?auto=format?auto=format&fit=crop&w=1920"
+              alt="pic 2"
+              style="width: 100%"
+            />
+          </div>
+
+          <div class="item">
+            <img
+              src="https://mamaearthp.imgix.net/wysiwyg/Retinol-Face-Wash-1920-512.jpg?auto=format?auto=format&fit=crop&w=1920"
+              alt="pic3"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- code for body section and show the products Best sellers baby  -->
+     <div class="section ">
+      <div class="section__products__div ">
+        <div class="left_shop_div ">
+          <h2>Best Sellers</h2>
+          <p>Get attractive Deals on our Best Selling Products.</p>
+
+          <button class="btn">SHOP NOW</button>
+        </div>
+        <div class="rght__products_div ">
+            <div class="myDemo ">
+                <section class="pagination_section wrapper" id="items">
+                    <span class="arrow_prev" id="prev">&#8249</span>
+                    <div class="container app_data" id="app_data"></div>
+                    <span class="arrow_next" id="next">&#8250</span>
+                </section>
+            </div>
+        </div>
+      </div>
+    </div> 
+
+
+    <!-- code for best deal -->
+
+    <div class="section ">
+      <div class="section__products__div ">
+        <div class="left_shop_div ">
+          <h2>Best Deals</h2>
+          <p>Get attractive Deals on our Best Selling Products.</p>
+
+          <button class="btn">SHOP NOW</button>
+        </div>
+        <div class="rght__products_div ">
+            <div class="myDemo ">
+                <section class="pagination_section wrapper" id="items2">
+                    <span class="arrow_prev" id="prev2">&#8249</span>
+                    <div class="container myApp_data" id="myApp_data"></div>
+                    <span class="arrow_next" id="next2">&#8250</span>
+                </section>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- code for hair -->
+    <div class="section ">
+      <div class="section__products__div ">
+        <div class="left_shop_div ">
+          <h2>Hair</h2>
+          <p>Explore 100% toxin-free and safe hair care products by Mamaearth. Whether it’s hair fall, dandruff, or frizzy hair – Mamaearth has a solution for your hair.</p>
+
+          <button class="btn">SHOP NOW</button>
+        </div>
+        <div class="rght__products_div ">
+            <div class="myDemo ">
+                <section class="pagination_section wrapper" id="items3">
+                    <span class="arrow_prev" id="prev3">&#8249</span>
+                    <div class="container myApp_data" id="myApp_data3"></div>
+                    <span class="arrow_next" id="next3">&#8250</span>
+                </section>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- code for Skin or face page -->
+    <div class="section ">
+      <div class="section__products__div ">
+        <div class="left_shop_div ">
+          <h2>Skin</h2>
+          <p>Explore 100% toxin-free and safe skincare products by Mamaearth that are formulated with love and the goodness of natural ingredients.</p>
+
+          <button class="btn">SHOP NOW</button>
+        </div>
+        <div class="rght__products_div ">
+            <div class="myDemo ">
+                <section class="pagination_section wrapper" id="items4">
+                    <span class="arrow_prev" id="prev4">&#8249</span>
+                    <div class="container myApp_data" id="myApp_data4"></div>
+                    <span class="arrow_next" id="next4">&#8250</span>
+                </section>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+     <!-- code for Skin or face page -->
+    <div class="section ">
+      <div class="section__products__div ">
+        <div class="left_shop_div ">
+          <h2>Baby</h2>
+          <p>Your little bundle of joy deserves nothing but the best. Explore MadeSafe Certified, natural, 100% toxin-free & gentle baby care products by Mamaearth. Give your little one the care they deserve!</p>
+
+          <button class="btn">SHOP NOW</button>
+        </div>
+        <div class="rght__products_div ">
+            <div class="myDemo ">
+                <section class="pagination_section wrapper" id="items5">
+                    <span class="arrow_prev" id="prev5">&#8249</span>
+                    <div class="container myApp_data" id="myApp_data5"></div>
+                    <span class="arrow_next" id="next5">&#8250</span>
+                </section>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- code for vitamin c -->
+    <div class="section ">
+      <div class="section__products__div ">
+        <div class="left_shop_div ">
+          <h2>Vitamin C</h2>
+          <p>Explore 100% toxin-free and safe skin care products by Mamaearth. Whether it’s hair fall, dandruff, or frizzy hair – Mamaearth has a solution for your skin.</p>
+
+          <button class="btn">SHOP NOW</button>
+        </div>
+        <div class="rght__products_div ">
+            <div class="myDemo ">
+                <section class="pagination_section wrapper" id="items6">
+                    <span class="arrow_prev" id="prev6">&#8249</span>
+                    <div class="container myApp_data" id="myApp_data6"></div>
+                    <span class="arrow_next" id="next6">&#8250</span>
+                </section>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- code for Onion Range -->
+    <div class="section ">
+      <div class="section__products__div ">
+        <div class="left_shop_div ">
+          <h2>Onion Range</h2>
+          <p>Explore 100% toxin-free and safe hair care products by Mamaearth. Whether it’s hair fall, dandruff, or frizzy hair – Mamaearth has a solution for your hair.</p>
+
+          <button class="btn">SHOP NOW</button>
+        </div>
+        <div class="rght__products_div ">
+            <div class="myDemo ">
+                <section class="pagination_section wrapper" id="items7">
+                    <span class="arrow_prev" id="prev7">&#8249</span>
+                    <div class="container myApp_data" id="myApp_data7"></div>
+                    <span class="arrow_next" id="next7">&#8250</span>
+                </section>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- code for Ubtan -->
+    <div class="section ">
+      <div class="section__products__div ">
+        <div class="left_shop_div ">
+          <h2>Ubtan</h2>
+          <p>Explore 100% toxin-free and safe skincare products by Mamaearth. Whether it’s acne, pigmentation, or dark spots – Mamaearth has a solution for your skin.</p>
+
+          <button class="btn">SHOP NOW</button>
+        </div>
+        <div class="rght__products_div ">
+            <div class="myDemo ">
+                <section class="pagination_section wrapper" id="items8">
+                    <span class="arrow_prev" id="prev8">&#8249</span>
+                    <div class="container myApp_data" id="myApp_data8"></div>
+                    <span class="arrow_next" id="next8">&#8250</span>
+                </section>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- code for Winter Care -->
+    <div class="section ">
+      <div class="section__products__div ">
+        <div class="left_shop_div ">
+          <h2>Winter Care</h2>
+          <p>Get attractive deals on our Winter Care Products.</p>
+
+          <button class="btn">SHOP NOW</button>
+        </div>
+        <div class="rght__products_div ">
+            <div class="myDemo ">
+                <section class="pagination_section wrapper" id="items9">
+                    <span class="arrow_prev" id="prev9">&#8249</span>
+                    <div class="container myApp_data" id="myApp_data9"></div>
+                    <span class="arrow_next" id="next9">&#8250</span>
+                </section>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- code for New Launches -->
+    <div class="section ">
+      <div class="section__products__div ">
+        <div class="left_shop_div ">
+          <h2>New Launches</h2>
+          <p>Shop for New Range of Safe & Healthy Baby, Skin, Hair and Men's Products.</p>
+
+          <button class="btn">SHOP NOW</button>
+        </div>
+        <div class="rght__products_div ">
+            <div class="myDemo ">
+                <section class="pagination_section wrapper" id="items10">
+                    <span class="arrow_prev" id="prev10">&#8249</span>
+                    <div class="container myApp_data" id="myApp_data10"></div>
+                    <span class="arrow_next" id="next10">&#8250</span>
+                </section>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script></script>
+    <script src="script.js"></script>
+  </body>
+</html>
