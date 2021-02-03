@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <link rel="stylesheet" href="page.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+   <link rel="stylesheet" href="./face_page.css">
+</head>
+<body>
+
+    <!-- start of Header -->
+    <body>
+        <div class="header ">
+          <div class="offers">
+            <p>Asia's brand with MADE SAFE Certified Products</p>
+            <p>
+              Free Shipping Above 399 | COD Available | Extract 5% OFF on Prepaid
+              Orders | Shop Now
+            </p>
+            <i class="fa fa-user icon-user" aria-hidden="true"></i>
+          </div>
+    
+          <div class="brand-nav">
+            <a href="#" class="brand-logo center">
+              <img
+                alt="logo"
+                class="logo"
+                src="https://mamaearthp.imgix.net/wysiwyg/Mamaearth_Goodness_Inside.png?auto=format&w=250"
+              />
+            </a>
+            <div class="input__search">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                class="search"
+                placeholder="Search fro products..."
+              />
+              <button class="search__btn">
+                <i class="fa fa-search icon-search"></i>Search
+              </button>
+            </div>
+            <div class="cart__signIn__div">
+              <button class="cart__btn">
+                <i class="fa fa-shopping-cart icon-cart"></i>Cart
+              </button>
+              <button class="sign__btn">
+                <i class="fa fa-user icon-signin"></i>Sign In
+              </button>
+            </div>
+          </div>
+    
+          <nav class="navbar">
+            <span class="navbar-toggle" id="js-navbar-toggle">
+              <i class="fas fa-bars"></i>
+            </span>
+    
+            <ul class="main-nav" id="js-menu">
+              <li>
+                <a href="../home/index.html" class="nav-links">HOME</a>
+              </li>
+              <li>
+                <a href="../baby/index.html" class="nav-links">BABY</a>
+              </li>
+              <li id="beauty">
+                <a href="./beauty_page.html" class="nav-links" id="beauty">BEAUTY</a>
+              </li>
+              <li>
+                <a href="./hair_page.html" class="nav-links" id="hair">HAIR</a>
+              </li>
+              <li>
+                <a href="./face_page.html" class="nav-links" id="face">FACE</a>
+              </li>
+              <li>
+                <a href="../baby/body.html" class="nav-links">BODY</a>
+              </li>
+              <li>
+                <a href="./gift_packs_page.html" class="nav-links" id="gift_packs">GIFT PACKS</a>
+              </li>
+              <li>
+                <a href="#" class="nav-links">ALL PRODUCTS</a>
+              </li>
+              <li>
+                <a href="#" class="nav-links">BLOG</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+    
+
+
+
+    <!-- //End Of Header -->
+
+<div class="face_page_container">
+    <div class="image">
+        <img src="https://mamaearthp.imgix.net/wysiwyg/Skin_Category_1920x512__gG3t4en.jpg?auto=format" alt="face_page">
+
+    </div>
+    <div class="beauty__page">
+        <div class="btn__field">
+           <div class="btn__field__left">
+                <button id="all">ALL</button>
+                <button>FACE WASH</button>
+                <button>FACE MASK</button>
+                <button>FACE SCRUB</button>
+                <button>FACE CREAM</button>
+                <button>FACE SERUM</button>
+                <button>BODY LOTION</button>
+                <button>BODY BUTTER</button>
+           </div>
+           <div class="button__field__right">
+                 <input type="text" name="sort" id="input" placeholder="Sort By">
+                 <select name="sort" id="sort">
+                     <option value=""></option>
+                     <option value="Rating">Rating</option>
+                     <option value="Price-High to Low">Price- High to Low</option>
+                     <option value="Price-Low to High">Price- Low to High</option>
+                 </select>
+           </div>
+        </div>
+
+        <div class="cards" id="cards"></div>
+    </div>
+</div>
+
+<!-- !-- footer start --> -->
+
+ <!-- class Help will be on top -->
+ <div id="help">
+    <h6 style="margin: -6px -6px 0 8px;">help ?</h6>
+</div>
+<!-- add every thing from here -->
+<div id="treeBox">
+    <div class="contentTree" style="text-align: center;">
+        <h3 style="font-weight: 600;">We Plant Goodness</h3>
+        <img src="https://mamaearthp.imgix.net/wysiwyg/strip2x.png?auto=format" style="height: 1.75px; width: 10vw; margin-right: 10px; margin-top: -35px;">
+        <h4 style="color: #8fc957; font-size: 36px; font-weight: 900; margin-top: -10px;">46,811</h4>
+        <h4 style="font-size: 18px;">Trees have got life already... <br> Everytime you buy from us, we plant more trees!</h4>
+        <a href="https://mamaearth.in/plant"><button style="background-color: #01afef; color: white; border: none; width: 140px; height: 40px; border-radius: 5px;">Know More</button></a>
+    </div>
+</img>
+</div>
+
+<div id="certiBox">
+    <div class="certificate">
+        <a href="../footer/wearesafe.html"><img src="https://mamaearthp.imgix.net/wysiwyg/dermatology-tested-100x100.png?auto=format&amp;fit=100%2C100&amp;ssl=1" alt="Dermatologically Tested" title="Dermatologically Tested"></a>
+        <div style="margin-left: 5px;">
+            <h5>Dermatologically Tested</h5>
+            <p style="font-size: 14px;">We ensure each product is tested clinically on the sensitive human skin to ensure that it is not allergic.</p>
+        </div>
+    </div>
+    <div class="certificate">
+        <a href="../footer/wearesafe.html"><img src="https://mamaearthp.imgix.net/wysiwyg/fda-100x100.jpg?auto=format&amp;fit=100%2C100&amp;ssl=1" alt="FDA Approved" title="FDA Approved"></a>
+        <div style="margin-left: 5px;">
+            <h5>FDA Approved</h5>
+            <p style="font-size: 14px;">MamaEarth is FDA approved, which means we are 100% safe to be used for babies as well as mamas.</p>
+        </div>
+    </div>
+    <div class="certificate">
+        <a href="../footer/wearesafe.html"><img src="https://mamaearthp.imgix.net/wysiwyg/msafe-100x100.jpg?auto=format&amp;fit=100%2C100&amp;ssl=1" alt="Made Safe Certified" title="Made Safe Certified"></a>
+        <div style="margin-left: 5px;">
+            <h5>Made Safe Certified</h5>
+            <p style="font-size: 14px;">The MADE SAFE (Made with Safe Ingredients™) seal means that a product is literally made with safe ingredients.</p>
+        </div>
+    </div>
+</div>
+<div style="text-align: center;">
+    <h3>What Our Customers Say</h3>
+    <img src="https://mamaearthp.imgix.net/wysiwyg/strip2x.png?auto=format" style="height: 1.75px; width: 20vw; margin-right: 10px; margin-top: -30px;">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+            <div class="MultiCarousel-inner">
+                <div class="item">
+                    <div class="pad15">
+                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
+                        <div class="information">
+                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
+                            <div>
+                                <p></p>
+                                <div>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+                <div class="item">
+                    <div class="pad15">
+                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
+                        <div class="information">
+                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
+                            <div>
+                                <p></p>
+                                <div>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pad15">
+                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
+                        <div class="information">
+                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
+                            <div>
+                                <p></p>
+                                <div>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pad15">
+                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
+                        <div class="information">
+                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
+                            <div>
+                                <p></p>
+                                <div>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pad15">
+                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
+                        <div class="information">
+                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
+                            <div>
+                                <p></p>
+                                <div>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pad15">
+                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
+                        <div class="information">
+                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
+                            <div>
+                                <p></p>
+                                <div>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                    <i class="fas fa-star" style="color: #ffc107;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary leftLst"><</button>
+            <button class="btn btn-primary rightLst">></button>
+        </div>
+    </div>
+</div>
+<!--  -->
+<div class="shiping">
+    <div class="shipleft">
+        <img src="https://mamaearthp.imgix.net/wysiwyg/mobile-truck.png?auto=format" srcset="https://mamaearthp.imgix.net/wysiwyg/mobile-truck.png?auto=format 44w,
+              https://mamaearthp.imgix.net/wysiwyg/delivery2x.png?auto=format 155w" sizes="(max-width: 767px) 22px, 3rem" loading="lazy">
+        <h4 style="font-size: 16px;">Free Shipping</h4>
+        <p style="font-size: 14px;">On Order Above Rs. 399</p>
+    </div>
+    <div class="shipmid">
+        <img src="https://mamaearthp.imgix.net/wysiwyg/mobile-wallet.png?auto=format" srcset="https://mamaearthp.imgix.net/wysiwyg/mobile-wallet.png?auto=format 34w,
+              https://mamaearthp.imgix.net/wysiwyg/Group_81512x.png?auto=format 127w" sizes="(max-width: 767px) 17px, 2.75rem" loading="lazy">
+        <h4 style="font-size: 16px;">COD Available</h4>
+        <p style="font-size: 14px; line-height: 8px;">@ Rs. 40 On Per Order</p>
+    </div>
+    <div class="shipright">
+        <h3 style="font-size: 22px;">Have Queries or Concerns? Contact Us</h3>
+        <button>CONTACT US</button>
+    </div>
+</div>
+<div class="payment">
+    <div class="lpay">
+        <h4>PAYMENT</h4>
+        <p><img src="https://mamaearthp.imgix.net/wysiwyg/noun_trusted_27146262x_6Ekja92.png">100% Payment Protection, Easy Return Policy</p>
+        <div>
+            <img src="https://mamaearthp.imgix.net/wysiwyg/visa2x.png">
+            <img src="https://mamaearthp.imgix.net/wysiwyg/master_card2x.png">
+            <img src="https://mamaearthp.imgix.net/wysiwyg/american_express2x.png">
+            <img src="https://mamaearthp.imgix.net/wysiwyg/rupay2x.png">
+            <img src="https://mamaearthp.imgix.net/wysiwyg/net_banking2x.png">
+        </div>
+    </div>
+    <div class="rpay">
+        <div>
+            <img src="https://mamaearthp.imgix.net/wysiwyg/dermatology-tested-100x1002x.png">
+            <p>Dermatologically Tested</p>
+        </div>
+        <div>
+            <img src="https://mamaearthp.imgix.net/wysiwyg/fda-100x100.jpg">
+            <p>FDA Approved</p>
+        </div>
+        <div>
+            <img src="https://mamaearthp.imgix.net/wysiwyg/msafe-100x100.jpg">
+            <p>Made Safe Certified</p>
+        </div>
+    </div>
+</div>
+<div>
+    <footer class="bg-light text-center text-lg-start" style="border: 1px solid #ddd;">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase" style="text-align: left;">USEFUL LINKS</h5>
+      
+              <ul class="list-unstyled mb-0" style="text-align: left;">
+                <li>
+                  <a href="#!" class="text-dark">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-dark">Returns</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-dark">Terms & Conditions</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-dark">Terms & Conditions- Cashback</a>
+                </li>
+                <li>
+                    <a href="#!" class="text-dark">Faqs</a>
+                  </li>
+                  <li>
+                    <a href="#!" class="text-dark">We're Safe</a>
+                  </li>
+                  <li>
+                    <a href="#!" class="text-dark">Track Orders</a>
+                  </li>
+                  <li>
+                    <a href="#!" class="text-dark">Contact US</a>
+                  </li>
+                  <li>
+                    <a href="#!" class="text-dark">Sitemap</a>
+                  </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0" style="text-align: left;">CATEGORIES</h5>
+      
+              <ul class="list-unstyled" style="text-align: left;">
+                <li>
+                  <a href="#!" class="text-dark">Baby</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-dark">Beauty</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase" style="text-align: left;">OUR STORES</h5>
+      
+              <ul class="list-unstyled mb-0" style="text-align: left;">
+                <li>
+                  <a href="#!" class="text-dark">New Delhi</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-dark">Mumbai</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-dark">Pune</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-dark">Chennai</a>
+                </li>
+                <li>
+                    <a href="#!" class="text-dark">Kolkata</a>
+                </li>
+                <li>
+                    <a href="#!" class="text-dark">Nagpur</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0" style="text-align: left;">MY ACCOUNT</h5>
+      
+              <ul class="list-unstyled" style="text-align: left;">
+                <li>
+                  <a href="#!" class="text-dark" style="color: #ccc;">Account</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-dark">Orders</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-dark">Addressess</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-rig">
+                <img style="width: 10%; height: 10%;" src="https://mamaearthp.imgix.net/wysiwyg/Best-Brand500x5002x.png" alt="">
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        
+        <div class="footer-bottom" style="border: 1px solid #ddd;">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center p-3" >
+                       <h3 style="font-size: 20px;">SHOW US SOME <i class="fas fa-heart" style="color: red;"></i> LOVE ON SOCIAL MEDIA</h3> 
+                    </div>
+                    <div class="col footer-social" style="font-size: 22px;">
+                        <a href="#"><i class="fab fa-facebook-f" style="color: #989898;width: 4%;"></i></a> 
+                        <a href="#"><i class="fab fa-twitter" style="color: #989898;width: 4%;"></i></a> 
+                        <a href="#"><i class="fas fa-envelope" style="color: #989898;width: 4%;"></i></a>  
+                        <a href="#"><i class="fab fa-instagram" style="color: #989898;width: 4%;"></i></a>
+                        <a href="#"><i class="fab fa-youtube" style="color: #989898;width: 4%;"></i></a> 
+                        <a href="#"><i class="fab fa-pinterest" style="color: #989898;width: 4%;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center p-3" style="color: #989898;">
+                © 2021 Honasa Consumer Pvt. Ltd. All Rights Reserved
+            </div>
+        </div>
+      </footer>
+</div>
+
+    <script src="./face_page.js"> </script>
+    <script src="../footer/page.js"></script>
+
+</body>
+</html>

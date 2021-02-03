@@ -3,28 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy Baby Care Product Online</title>
-    <link rel="stylesheet" href="./baby.css">
+    <title>Buy Mamaearth Body Care Products Online</title>
+    <link rel="stylesheet" href="./body.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
-    <link rel="stylesheet" href="./baby.css">
-    <link rel="stylesheet" href="../footer/page.css">
+    <link rel="stylesheet" href="./body.css">
     <link rel="stylesheet" href="../home/style.css">
+    <link rel="stylesheet" href="../footer/page.css">
+    
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-
-<link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&family=Roboto:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500&display=swap"
-      rel="stylesheet"
-    />
-    
 </head>
 <body>
     <div class="header ">
@@ -77,7 +66,7 @@
               <a href="../home/index.html" class="nav-links">HOME</a>
             </li>
             <li>
-              <a href="../baby/index.html" class="nav-links">BABY</a>
+              <a href="./index.html" class="nav-links">BABY</a>
             </li>
             <li>
               <a href="../beauty/beauty_page.html" class="nav-links">BEAUTY</a>
@@ -104,22 +93,18 @@
         </nav>
       </div>
 
-
-    <img src="https://mamaearthp.imgix.net/wysiwyg/Baby_1920x512_1_dr7MGAG.jpg?auto=format" alt="baby with baby products image" id="babyImage">
-
-
-    <div class="homeToBaby">
+    <div class="homeToBody">
         <button>Home</button> > <button>Baby</button>
     </div>
     
     <div class="productBox">
         <div class="textBox">
             <h2>BestSeller</h2>
-            <h3>Toxin-Free Mamaearth Baby Care Products</h3>
+            <h3>Mamaearth Body Care Products, Natural Ingredients, Safe, No Toxins</h3>
         </div>
         <div id="cards">
-          <img src="https://mamaearth.imgix.net/n/o/nourishing-bathing-bars_3.jpg?auto=format&fit=crop&w=300" alt="bathingsoap">
-          <h5>Nourshing Bathing Bar Soap For Kids-(Pack of 5,75gm Each)</h5>
+          <img src="https://mamaearth.imgix.net/u/b/ubtan-hand-cream_1_1.jpg?auto=format&fit=crop&w=300" alt="cream">
+          <h5>Ubtan Yogurt with Turmeric and Saffron for Deep Moisturization – 200 ml</h5>
           <h4>₹499</h4>
           <div class = "row">
             <p>5.0<i class="fa fa-star"></i></p>
@@ -127,43 +112,30 @@
          </div>
         </div>
         <div id="cards">
-          <img src="https://mamaearth.imgix.net/_/x/_xl_-diaper_1.jpg?auto=format&fit=crop&w=300" alt="diaper">
-          <h5>Plant-Based Diaper Pants for Babies-12-17 kg(Size XL - 30 Diapers)</h5>
+          <img src="https://mamaearth.imgix.net/n/e/neem-body-scrub_2.jpg?auto=format&fit=crop&w=300" alt="scrub">
+          <h5>Neem Body Scrub with Neem & Tulsi for Skin Purification – 200 g</h5>
           <h4>₹999</h4>
           <div class = "row">
             <p>5.0<i class="fa fa-star"></i></p>
             <button>ADD TO CART</button>
          </div>
         </div>
-        <div id="cards">
-          <img src="https://mamaearth.imgix.net/p/l/plant-based-multipurpose-cleanser-_1.jpg?auto=format&fit=crop&w=300" alt="cleanser">
-          <h5>Plant-Based Multipurpose Cleanser for Babies- 500ml</h5>
-          <h4>₹499</h4>
-          <div class = "row">
-            <p>4.8<i class="fa fa-star"></i></p>
-            <button>ADD TO CART</button>
-         </div>
-        </div>
     </div>
 
     <div id="buttonsAndSortingForProductsDsiplay">
-        <button id="all" >ALL</button>
-        <button id="diaper">DIAPER</button>
-        <button id="shampoo" >SHAMPOO</button>
-        <button id="lotion" >LOTION</button>
-        <button id="oil" >OIL</button>
-        <button id="powder" >POWDER</button>
-        
+        <button id="all">ALL</button>
+        <button id="lotion">BODY LOTION</button>
+        <button id="butter">BODY BUTTER</button>
+
         <select name="sortItem" id="sortItem">
             <option value="">Sort By</option>
-            <option value="rating" id="sortRating">Rating</option>
+            <option value="rating">Rating</option>
             <option value="high">Price-High to Low</option>
             <option value="low">Price-Low to High</option>
         </select>
     </div>
 
     <div id="card"></div>
-
 
     <!-- class Help will be on top -->
     <div id="help">
@@ -259,7 +231,7 @@
         <footer class="bg-light text-center text-lg-start" style="border: 1px solid #ddd;">
             <!-- Grid container -->
             <div class="container p-4">
-              <!--Grid row-->
+              <!--Grid row -->
               <div class="row">
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
@@ -271,14 +243,14 @@
                     </li>
                     <li>
                       <a href="#!" class="text-dark">Returns</a>
-                    </li>
+                    </li> 
                     <li>
                       <a href="#!" class="text-dark">Terms & Conditions</a>
                     </li>
                     <li>
                       <a href="#!" class="text-dark">Terms & Conditions- Cashback</a>
                     </li>
-                    <li>
+                     <li>
                         <a href="#!" class="text-dark">Faqs</a>
                       </li>
                       <li>
@@ -355,9 +327,9 @@
                     </li>
                   </ul>
                 </div>
-                <div class="col-rig">
+                <!-- <div class="col-rig">
                     <img style="width: 10%; height: 10%;" src="https://mamaearthp.imgix.net/wysiwyg/Best-Brand500x5002x.png" alt="">
-                </div>
+                </div> -->
                 <!--Grid column-->
               </div>
               <!--Grid row-->
@@ -368,14 +340,14 @@
                     <div class="row">
                         <div class="text-center p-3" >
                            <h3 style="font-size: 20px;">SHOW US SOME <i class="fas fa-heart" style="color: red;"></i> LOVE ON SOCIAL MEDIA</h3> 
-                        </div>
-                        <div class="col footer-social" style="font-size: 22px;">
-                            <a href="#"><i class="fab fa-facebook-f" style="color: #989898;width: 4%;margin: 5px;"></i></a> 
-                            <a href="#"><i class="fab fa-twitter" style="color: #989898;width: 4%;margin: 5px;"></i></a> 
-                            <a href="#"><i class="fas fa-envelope" style="color: #989898;width: 4%;margin: 5px;"></i></a>  
-                            <a href="#"><i class="fab fa-instagram" style="color: #989898;width: 4%;margin: 5px;"></i></a>
-                            <a href="#"><i class="fab fa-youtube" style="color: #989898;width: 4%;margin: 5px;"></i></a> 
-                            <a href="#"><i class="fab fa-pinterest" style="color: #989898;width: 4%;margin: 5px;"></i></a>
+                         </div>
+                         <div class="col footer-social" style="font-size: 22px;">
+                            <a href="#"><i class="fab fa-facebook-f" style="color: #989898;width: 4%;"></i></a> 
+                            <a href="#"><i class="fab fa-twitter" style="color: #989898;width: 4%;"></i></a> 
+                            <a href="#"><i class="fas fa-envelope" style="color: #989898;width: 4%;"></i></a>  
+                            <a href="#"><i class="fab fa-instagram" style="color: #989898;width: 4%;"></i></a>
+                            <a href="#"><i class="fab fa-youtube" style="color: #989898;width: 4%;"></i></a> 
+                            <a href="#"><i class="fab fa-pinterest" style="color: #989898;width: 4%;"></i></a>
                         </div>
                     </div>
                 </div>
@@ -386,9 +358,8 @@
           </footer>
     </div>
 
-    <script src="./baby.js"></script>
+    <script src="./body.js"></script>
     <script src="../footer/page.js"></script>
-    <!-- <script src="../home/script.js"></script> -->
-    
+    <script src="../home/script.js"></script>    
 </body>
 </html>
