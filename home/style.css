@@ -15,6 +15,9 @@
   font-weight: 300;
   font-size: 12px;
 }
+.offers > p {
+  margin: 5px;
+}
 .logo {
   width: 150px;
   height: 50px;
@@ -159,8 +162,6 @@
   width: 90%;
   margin: auto;
   height: 580px;
-
-  /* border: 1px solid red; */
 }
 
 .section__products__div {
@@ -226,7 +227,11 @@ a {
 #prev3,
 #prev4,
 #prev5,
-#prev6 {
+#prev6,
+#prev7,
+#prev8,
+#prev9,
+#prev10 {
   cursor: pointer;
 }
 #next,
@@ -234,7 +239,11 @@ a {
 #next3,
 #next4,
 #next5,
-#next6 {
+#next6,
+#next7,
+#next8,
+#next9,
+#next10 {
   cursor: pointer;
 }
 
@@ -243,11 +252,10 @@ a {
   width: 300px;
   margin: 10px;
   height: 500px;
-  /* color: #fff; */
   text-align: center;
   border-radius: 10px;
   position: relative;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: rgb(119 119 119 / 33%) 0px 0px 6px 1px;
 }
 
 .tag {
@@ -270,7 +278,6 @@ a {
   left: 0rem;
   right: 100px;
   width: 100px;
-  /* z-index: 1; */
 }
 
 .container {
@@ -306,8 +313,6 @@ a {
 }
 
 .rating__div {
-  /* border: 1px solid red; */
-
   display: flex;
   align-items: center;
   margin-top: 30px !important;
@@ -324,8 +329,6 @@ a {
   color: #ffffff !important;
 }
 .rating__span {
-  /* border: 1px solid red; */
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -347,7 +350,6 @@ a {
 .final___div {
   display: flex;
   flex-direction: row;
-  /* justify-content; */
 }
 
 .timer__container {
@@ -370,7 +372,6 @@ a {
 .span__div {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
   align-items: center;
 }
 
