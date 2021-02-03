@@ -969,9 +969,36 @@ function createUserCard(item) {
 
   let card10 = document.createElement("div");
   card10.classList.add("card");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card10.append(image, description__div, price_tag, rating__div);
+  card10.append(image, description__div, price_tag, rating__div, tag);
 
   return card10;
 }
+
+// code for timer
+
+setInterval(function time() {
+  var d = new Date();
+  var hours = 24 - d.getHours();
+  var min = 60 - d.getMinutes();
+  if ((min + "").length == 1) {
+    min = "0" + min;
+  }
+  var sec = 60 - d.getSeconds();
+  if ((sec + "").length == 1) {
+    sec = "0" + sec;
+  }
+
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("min").innerHTML = min;
+  document.getElementById("sec").innerHTML = sec;
+}, 1000);
