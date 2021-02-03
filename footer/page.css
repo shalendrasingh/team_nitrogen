@@ -97,6 +97,7 @@
     margin: 22% 95% ;
     border-radius: 5px;
     z-index: 1;
+    cursor: pointer;
 }
 /*  */
 .MultiCarousel {
