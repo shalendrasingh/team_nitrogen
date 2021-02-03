@@ -97,6 +97,7 @@
     margin: 22% 95% ;
     border-radius: 5px;
     z-index: 1;
+    cursor: pointer;
 }
 /*  */
 .MultiCarousel {
@@ -162,4 +163,32 @@
 
 .testingEarth {
   margin: 5%;
+}
+
+
+/* login */
+#loginFormBOX{
+    margin: 5%;
+    margin-left: 22%;
+}
+#mobileNoEnter{
+    width: 65%;
+    height: 40px;
+    margin-bottom: 1%;
+    border: 1px solid #dde;
+}
+#mobileNoEnter:focus{
+    outline: none;
+    border-color: #41A8DD;
+}
+#loginBtn{
+    width: 65%;
+    height: 40px;
+    border: none;
+    background-color: #41A8DD;
+    color: white;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 3px;
+    cursor: pointer;
 }
