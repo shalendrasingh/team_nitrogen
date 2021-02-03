@@ -20,7 +20,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500&display=swap"
       rel="stylesheet"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -35,6 +35,7 @@
       .border {
         border: 1px solid red;
       }
+      
     </style>
   </head>
   <body>
@@ -384,10 +385,40 @@
         </div>
       </div>
     </div>
+    
+
+<!-- code for countdown timer -->
+<div class="timer__container border">
+  <h2 class="deal__head">Deal Of The Day</h2>
+  <div class="span__div"><span class="s1">Hurry !</span> <span class="s2">Offer</span> <span class="s3">Will Expire In</span></div>
+<div id="the-final-countdown" class="final___div">
+  <div class="hrs border">
+    <h1 id="hours" class="z_padding"></h1>
+  <p>HR</p>
+</div>
 
 
+<div class="hrs border">
+    <h1 id="min" class="z_padding"></h1>
+  <p>MIN</p>
+</div>
+  
 
-    <script></script>
+
+<div class="hrs border">
+    <h1 id="sec" class="z_padding"></h1>
+  <p>SEC</p>
+</div>
+  
+ 
+</div>
+
+
+<div class="btnDiv">
+<button class="btn view__btn">VIEW ALL DEALS</button>
+</div>
+</div>
+
     <script src="script.js"></script>
   </body>
 </html>

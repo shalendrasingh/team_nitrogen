@@ -246,7 +246,31 @@ a {
   /* color: #fff; */
   text-align: center;
   border-radius: 10px;
+  position: relative;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tag {
+  width: 70px;
+  left: 0.5rem;
+  background-color: rgb(239, 83, 80);
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  font-size: 0.9rem;
+  line-height: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+  border-radius: 5px 0px;
+}
+
+.tagsname {
+  position: absolute;
+  top: 0;
+  left: 0rem;
+  right: 100px;
+  width: 100px;
+  /* z-index: 1; */
 }
 
 .container {
@@ -316,4 +340,86 @@ a {
   display: inline-block;
   vertical-align: bottom;
   font-size: 0.8rem;
+}
+
+/* code for timer */
+
+.final___div {
+  display: flex;
+  flex-direction: row;
+  /* justify-content; */
+}
+
+.timer__container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.deal__head {
+  color: #5ebff0;
+  font-family: "Noto Serif", serif;
+  font-weight: 300 !important;
+  font-size: 24px;
+}
+
+.span__div {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.s1 {
+  margin: 10px;
+  color: #303030;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.s2 {
+  margin: 10px;
+  color: #41a8dd;
+  font-family: "Noto Serif", serif;
+  font-weight: 300;
+  font-size: 35px;
+}
+
+.s3 {
+  margin: 10px;
+  color: #303030;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+}
+
+.view__btn {
+  margin-top: 30px;
+  background-color: #41a8dd;
+  color: white;
+}
+
+.hrs {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin: 5px;
+  width: 60px;
+  height: 70px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.z_padding {
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
 }
