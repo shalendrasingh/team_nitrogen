@@ -47,7 +47,7 @@ async function getData() {
 }
 
 function generateData(data) {
-  console.log(data);
+  // console.log(data);
   let appData = document.getElementById("app_data");
   appData.innerHTML = "";
   let len = data.length;
@@ -112,7 +112,7 @@ window.addEventListener("load", function () {
 
 function changePage2(val) {
   page2 += val;
-  console.log(page2);
+  // console.log(page2);
   let per_page2 = items2.value;
   getData2(per_page2);
 }
@@ -120,7 +120,7 @@ function changePage2(val) {
 function changePerPage2(e) {
   page2 = 1;
   let per_page2 = e.target.value;
-  console.log(per_page2);
+  // console.log(per_page2);
   getData2(per_page2);
 }
 
@@ -140,18 +140,18 @@ async function fetchApi(url) {
 async function getData2(val = 5) {
   fetchlink2 = `https://json-server-mocker-projects.herokuapp.com/best?_page=${page2}&_limit=3`;
   const data = await fetchApi(fetchlink2);
-  console.log(data);
+  // console.log(data);
   generateData2(data);
 }
 
 function generateData2(data) {
-  console.log(data);
+  // console.log(data);
   let appData = document.getElementById("myApp_data");
   appData.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
     let card2 = createUserCard(data[i]);
-    console.log(data[i]);
+    // console.log(data[i]);
     appData.append(card2);
   }
 }
@@ -218,7 +218,7 @@ function changePage3(val) {
 function changePerPage3(e) {
   page3 = 1;
   let per_page3 = e.target.value;
-  console.log(per_page3);
+  // console.log(per_page3);
   getData2(per_page3);
 }
 
@@ -238,18 +238,18 @@ async function fetchApi(url) {
 async function getData3(val = 5) {
   fetchlink3 = `https://json-server-mocker-projects.herokuapp.com/hair_page?_page=${page3}&_limit=3`;
   const data = await fetchApi(fetchlink3);
-  console.log(data);
+  // console.log(data);
   generateData3(data);
 }
 
 function generateData3(data) {
-  console.log(data);
+  // console.log(data);
   let appData = document.getElementById("myApp_data3");
   appData.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
     let card3 = createUserCard(data[i]);
-    console.log(data[i]);
+    // console.log(data[i]);
     appData.append(card3);
   }
 }
@@ -316,7 +316,7 @@ function changePage4(val) {
 function changePerPage4(e) {
   page4 = 1;
   let per_page4 = e.target.value;
-  console.log(per_page4);
+  // console.log(per_page4);
   getData4(per_page4);
 }
 
@@ -336,18 +336,18 @@ async function fetchApi(url) {
 async function getData4() {
   fetchlink4 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page4}&_limit=3`;
   const data = await fetchApi(fetchlink4);
-  console.log(data);
+  // console.log(data);
   generateData4(data);
 }
 
 function generateData4(data) {
-  console.log(data);
+  // console.log(data);
   let appData = document.getElementById("myApp_data4");
   appData.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
     let card4 = createUserCard(data[i]);
-    console.log(data[i]);
+    // console.log(data[i]);
     appData.append(card4);
   }
 }
@@ -414,7 +414,7 @@ function changePage5(val) {
 function changePerPage5(e) {
   page5 = 1;
   let per_page5 = e.target.value;
-  console.log(per_page5);
+  // console.log(per_page5);
   getData5(per_page5);
 }
 
@@ -434,7 +434,7 @@ async function fetchApi(url) {
 async function getData5() {
   fetchlink5 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page5}&_limit=3`;
   const data = await fetchApi(fetchlink5);
-  console.log(data);
+  // console.log(data);
   generateData5(data);
 }
 
@@ -512,7 +512,7 @@ function changePage6(val) {
 function changePerPage6(e) {
   page6 = 1;
   let per_page6 = e.target.value;
-  console.log(per_page6);
+  // console.log(per_page6);
   getData6(per_page6);
 }
 
@@ -532,7 +532,7 @@ async function fetchApi(url) {
 async function getData6() {
   fetchlink6 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page6}&_limit=3`;
   const data = await fetchApi(fetchlink6);
-  console.log(data);
+  // console.log(data);
   generateData6(data);
 }
 
@@ -610,7 +610,7 @@ function changePage7(val) {
 function changePerPage7(e) {
   page7 = 1;
   let per_page7 = e.target.value;
-  console.log(per_page7);
+  // console.log(per_page7);
   getData7(per_page7);
 }
 
@@ -630,7 +630,7 @@ async function fetchApi(url) {
 async function getData7() {
   fetchlink7 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page7}&_limit=3`;
   const data = await fetchApi(fetchlink7);
-  console.log(data);
+  // console.log(data);
   generateData7(data);
 }
 
@@ -708,7 +708,7 @@ function changePage8(val) {
 function changePerPage8(e) {
   page8 = 1;
   let per_page8 = e.target.value;
-  console.log(per_page8);
+  // console.log(per_page8);
   getData8(per_page8);
 }
 
@@ -728,7 +728,7 @@ async function fetchApi(url) {
 async function getData8() {
   fetchlink8 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page8}&_limit=3`;
   const data = await fetchApi(fetchlink8);
-  console.log(data);
+  // console.log(data);
   generateData8(data);
 }
 
@@ -806,7 +806,7 @@ function changePage9(val) {
 function changePerPage9(e) {
   page9 = 1;
   let per_page9 = e.target.value;
-  console.log(per_page9);
+  // console.log(per_page9);
   getData9(per_page9);
 }
 
@@ -826,7 +826,7 @@ async function fetchApi(url) {
 async function getData9() {
   fetchlink9 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page9}&_limit=3`;
   const data = await fetchApi(fetchlink9);
-  console.log(data);
+  // console.log(data);
   generateData9(data);
 }
 
@@ -904,7 +904,7 @@ function changePage10(val) {
 function changePerPage10(e) {
   page10 = 1;
   let per_page10 = e.target.value;
-  console.log(per_page10);
+  // console.log(per_page10);
   getData10(per_page10);
 }
 
@@ -924,7 +924,7 @@ async function fetchApi(url) {
 async function getData10() {
   fetchlink10 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page10}&_limit=3`;
   const data = await fetchApi(fetchlink10);
-  console.log(data);
+  // console.log(data);
   generateData10(data);
 }
 
@@ -1002,3 +1002,83 @@ setInterval(function time() {
   document.getElementById("min").innerHTML = min;
   document.getElementById("sec").innerHTML = sec;
 }, 1000);
+
+// code for search functionality
+let searchInputValue = document.querySelector("#search");
+
+let searchBtn = document
+  .querySelector("#search_btn")
+  .addEventListener("click", handleSearchData);
+
+function handleSearchData() {
+  let value = searchInputValue.value;
+  console.log(value);
+  let search_result__display = document.querySelector("#search_result");
+  search_result__display.innerHTML = "";
+
+  fetch(`https://json-server-mocker-projects.herokuapp.com/baby?q=${value}`)
+    .then((res) => res.json())
+    .then((res) => {
+      search_result__display.innerHTML = res;
+      console.log(res);
+      generateData11(res);
+    });
+}
+
+// 1234567890-
+
+function generateData11(data) {
+  // console.log(data);
+  let search_result = document.getElementById("search_result");
+  search_result.innerHTML = "";
+  let len = data.length;
+  for (let i = 0; i < len; i++) {
+    let card11 = createUserCard(data[i]);
+    // console.log(data[i]);
+    search_result.append(card11);
+  }
+}
+
+function createUserCard(item) {
+  let image = document.createElement("img");
+  image.className = "img";
+  image.src = item.img;
+
+  let description__div = document.createElement("p");
+  description__div.className = "desc";
+  description__div.textContent = item.description;
+
+  let price_tag = document.createElement("h3");
+  price_tag.className = "price";
+  price_tag.textContent = "₹ " + item.amount;
+
+  let rating__div = document.createElement("div");
+  rating__div.className = "rating__div";
+
+  let rating__span = document.createElement("h5");
+  rating__span.textContent = item.rating;
+  rating__span.className = "rating__span";
+
+  let icon = document.createElement("i");
+  icon.className = "fa fa-star icon-star";
+
+  let add_cart_btn = document.createElement("button");
+  add_cart_btn.textContent = "ADD TO CART";
+  add_cart_btn.className = "btn addBtn";
+
+  let card11 = document.createElement("div");
+  card11.classList.add("card");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
+  rating__span.append(icon);
+  rating__div.append(rating__span, add_cart_btn);
+  card11.append(image, description__div, price_tag, rating__div, tag);
+
+  return card11;
+}
