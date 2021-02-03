@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: rgb(255,255,255);
+            font-family: 'Roboto', sans-serif;
+
+        }
+        .beauty__page{
+        /* border: 1px solid gray; */
+        width: 83%;
+        margin: 20px auto;
+        }
+        .btn__field{
+            /* border: 1px solid gray; */
+            width: 100%;
+            height: 50px;
+            display: flex;
+        }
+        .btn__field__left{
+            /* border: 1px solid gray; */
+            width: 50%;
+            height: 50px;
+        }
+        .button__field__right{
+            /* border: 1px solid gray; */
+            width: 50%;
+            height: 50px;
+        }
+        .btn__field__left button{
+            /* width: 50px; */
+            height: 25px;
+            background-color: #FFFFFF;
+            margin: 5px;
+            outline: none;
+            border: 1px solid rgba(128, 128, 128, 0.473);
+            font-size: 11px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        .btn__field__left button:hover{
+            transform: scale(1.05);
+        }
+        .button__field__right input{
+            border: 1px solid gray;
+            width: 250px;
+            height: 25px;
+            border-radius: 2px;
+            color: gray;
+            /* border-right: none; */
+            margin-left: 200px;
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+        .button__field__right input:focus{
+            /* border:1px solid blue; */
+            outline: 1px solid blue;
+            border-radius: 2px;
+        }
+        .button__field__right select{
+            width: 25px;
+            height: 30px;
+            /* border-left: none; */
+        }
+         option{
+            width: 200px;
+            height: 25px;
+            color: gray;
+        }
+        option:hover{
+            background-color: rgba(135, 207, 235, 0.082);
+        }
+        .card{
+            width: 22%;
+            height: 360px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.486), -2px -2px 2px rgba(128, 128, 128, 0.5);
+            margin: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .card:hover{
+            transform: scale(1.02);
+        }
+        .image{
+            width: 100%;
+        }
+        .cards{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .div{
+            width: 38px;
+            height: 20px;
+            color: white;
+            font-size: 8px;
+            background-color: rgb(0,117,0);
+            /* background-color: rgb(109,165,35); */
+            text-align:left ;     
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 2px;
+            margin-left: 15px;
+            padding-left: 5px;
+            margin-top: 13px;
+       }
+        .rating_img{
+            width: 20px;
+        }
+        .bottom_div{
+            display: flex;
+        }
+        .cart_btn{
+            border: 1px solid rgba(128, 128, 128, 0.452);
+            border-radius: 3px;
+            width: 110px;
+            height: 27px;
+            font-size: 7px;
+            letter-spacing: 1px;
+            color: rgb(0,175,239);
+            font-weight: bold;
+            background-color: #FFFFFF;
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+        .cart_btn:hover{
+            background-color: rgb(100,184,227);
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+        .cart_btn:focus{
+            outline: none;
+        }
+        .desc{
+            line-height: 18px;
+        }
+        .image img{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="face_page_container">
+    <div class="image">
+        <img src="https://mamaearthp.imgix.net/wysiwyg/Skin_Category_1920x512__gG3t4en.jpg?auto=format" alt="face_page">
+
+    </div>
+    <div class="beauty__page">
+        <div class="btn__field">
+           <div class="btn__field__left">
+                <button id="all">ALL</button>
+                <button>FACE WASH</button>
+                <button>FACE MASK</button>
+                <button>FACE SCRUB</button>
+                <button>FACE CREAM</button>
+                <button>FACE SERUM</button>
+                <button>BODY LOTION</button>
+                <button>BODY BUTTER</button>
+           </div>
+           <div class="button__field__right">
+                 <input type="text" name="sort" id="input" placeholder="Sort By">
+                 <select name="sort" id="sort">
+                     <option value=""></option>
+                     <option value="Rating">Rating</option>
+                     <option value="Price-High to Low">Price- High to Low</option>
+                     <option value="Price-Low to High">Price- Low to High</option>
+                 </select>
+           </div>
+        </div>
+
+        <div class="cards" id="cards"></div>
+    </div>
+</div>
+
+    <script>
+        window.addEventListener('load', execute)
+
+        function execute(){
+         let btn = document.getElementById('all')
+         btn.addEventListener('click', showData)
+        }
+
+        function showData(){
+            let url = "https://nitrogen-project.herokuapp.com/face_page"
+            fetch(url)
+            .then(res => res.json())
+            .then(res => displayData(res))
+        }
+
+        function displayData(data){
+            let cards = document.getElementById('cards')
+            
+            for(i in data){
+                let card = document.createElement('div')
+                card.setAttribute('class', 'card')
+                cards.append(card)
+
+                let img = document.createElement('img')
+                img.src = data[i].img
+                img.setAttribute('class', 'image')
+                card.append(img)
+
+                let desc = document.createElement('p')
+                desc.setAttribute('class', 'desc')
+                desc.textContent = data[i].desc
+                card.append(desc)
+
+                let price = document.createElement('p')
+                price.setAttribute('class', 'price')
+                price.textContent = data[i].price
+                card.append(price)
+
+                let bottom_div = document.createElement('div')
+                bottom_div.setAttribute('class', 'bottom_div')
+                card.append(bottom_div)
+
+                let div = document.createElement('div')
+                div.setAttribute('class', 'div')
+                bottom_div.append(div)
+
+                let rating = document.createElement('p')
+                rating.setAttribute('class', 'rating')
+                rating.textContent = data[i].rating
+                div.append(rating)
+
+                let rating_img = document.createElement('img')
+                rating_img.setAttribute('class', 'rating_img')
+                rating_img.src = data[i].rating_img
+                div.append(rating_img)
+
+                let cart_btn = document.createElement('button')
+                cart_btn.setAttribute('class', 'cart_btn')
+                cart_btn.textContent="ADD TO CART"
+                bottom_div.append(cart_btn)
+
+            }
+        }
+    </script>
+</body>
+</html>
