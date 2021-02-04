@@ -50,6 +50,11 @@
   border-bottom-left-radius: 7px;
   border-top-left-radius: 7px;
 }
+
+.search {
+  outline: none;
+  padding-left: 5px;
+}
 .input__search > button {
   width: 120px;
   border: none;
@@ -62,6 +67,10 @@
 }
 .search {
   border: 1px solid #e0e0e0;
+}
+
+.search__btn {
+  outline: none;
 }
 
 .cart__signIn__div {
@@ -432,7 +441,7 @@ a {
 .search_result {
   display: flex;
   position: absolute;
-  top: 150px;
+  top: 130px;
   /* left: 0;
   right: 0; */
   width: 100%;
@@ -443,6 +452,7 @@ a {
   align-items: center;
   justify-content: center;
   margin: 0px;
-  background-color: #41a8dd;
+  /* background-color: #41a8dd; */
+  background-color: #ffffff;
   z-index: 1;
 }
