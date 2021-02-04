@@ -167,11 +167,13 @@ a {
 }
 /* End css of header */
 
-.beauty__page {
-  /* border: 1px solid gray; */
-  width: 83%;
+
+
+/* .beauty__page {
+  
+  width: 100%;
   margin: 20px auto;
-}
+} */
 .btn__field {
   /* border: 1px solid gray; */
   width: 100%;
@@ -198,30 +200,51 @@ a {
   font-size: 11px;
   margin-top: 10px;
   letter-spacing: 1px;
+  margin-top: 40px;
 }
 .btn__field__left button:hover {
   transform: scale(1.05);
 }
-.button__field__right input {
+.image img{
+  width: 100%;
+  height: 350px;
+}
+
+
+#sortItem {
+  width: 40%;
+  height: 35px;
+  margin-left: 38%;
+  padding-left: 10px;
+  margin-top: 30px;
+  outline: none;
+}
+#sortItem:focus{
+  outline: none;
+}
+
+
+
+
+/* .button__field__right input {
   border: 1px solid gray;
   width: 250px;
   height: 25px;
   border-radius: 2px;
   color: gray;
-  /* border-right: none; */
   margin-left: 200px;
-  margin-top: 10px;
+  margin-top: 40px;
   padding-left: 15px;
 }
 .button__field__right input:focus {
-  /* border:1px solid blue; */
+
   outline: 1px solid blue;
   border-radius: 2px;
 }
 .button__field__right select {
   width: 25px;
   height: 30px;
-  /* border-left: none; */
+  
 }
 option {
   width: 200px;
@@ -230,10 +253,10 @@ option {
 }
 option:hover {
   background-color: rgba(135, 207, 235, 0.082);
-}
-.card {
+} */
+/* .card {
   width: 22%;
-  height: 430px;
+  height: 400px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.486),
     -2px -2px 2px rgba(128, 128, 128, 0.5);
@@ -241,8 +264,12 @@ option:hover {
   text-align: center;
   font-weight: bold;
   font-size: 11px;
-}
-.card:hover {
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; */
+  
+/* } */
+/* .card:hover {
   transform: scale(1.02);
   transition: all 0.2s;
 }
@@ -252,6 +279,12 @@ option:hover {
 .cards {
   display: flex;
   flex-wrap: wrap;
+  
+}
+.result_data{
+  display:flex;
+  flex-direction: row;
+  border: 1px solid red;
 }
 .div {
   width: 40px;
@@ -301,8 +334,86 @@ option:hover {
 }
 .image img {
   width: 100%;
-  /* height: 400px; */
+  height: 400px;
+}  */
+
+
+
+#card {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 10%;
+  margin-top: 30px;
 }
+
+#cards {
+  /* border: 1px solid black; */
+  box-shadow: 2px 2px 6px 2px silver;
+  margin: 1%;
+  width: 23%;
+}
+
+#cards > h5,
+#cards > h4 {
+  text-align: center;
+  font-size: 13px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  /* width: 60px; */
+  align-items: center;
+}
+
+.row > p {
+  border: 1px solid #6da523;
+  border-radius: 5px;
+  width: fit-content;
+  background-color: #6da523;
+  padding: 1%;
+  margin-left: 16%;
+  width: 45px;
+  height: 25px;
+  color: #FFFFFF;
+  
+}
+
+.row > button {
+  width: 45%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  border: 1px solid rgba(128, 128, 128, 0.473);
+  border-radius: 5px;
+  color: #1ab7f1;
+  height: 25px;
+  background-color: #FFFFFF;
+}
+
+.row > button:hover {
+  background-color: #1ab7f1;
+  color: white;
+}
+
+#cards > img {
+   /* height: 270px; */
+   margin-bottom: 15%;
+  width: 100%;
+}
+
+i {
+  color: white;
+}
+
+#all{
+  margin-left: 146px;
+}
+
+
+
+
+
 
 /* footer start css */
 
