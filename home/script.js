@@ -1050,7 +1050,7 @@ function createUserCard(item) {
 
   let price_tag = document.createElement("h3");
   price_tag.className = "price";
-  price_tag.textContent = "₹ " + item.amount;
+  price_tag.textContent = "₹ " + item.price;
 
   let rating__div = document.createElement("div");
   rating__div.className = "rating__div";
@@ -1081,4 +1081,108 @@ function createUserCard(item) {
   card11.append(image, description__div, price_tag, rating__div, tag);
 
   return card11;
+}
+
+// code for routing the page
+
+let best__seller__button = document
+  .querySelector("#best__seller__btn")
+  .addEventListener("click", redirectToBabyPage);
+
+function redirectToBabyPage() {
+  return Promise.resolve().then(() => {
+    location = "../baby/index.html";
+
+    console.log("object");
+  });
+}
+
+let best__deal__button = document
+  .querySelector("#best__deal__btn")
+  .addEventListener("click", redirectToDealPage);
+
+function redirectToDealPage() {
+  return Promise.resolve().then(() => {
+    location = "../beauty/beauty_page.html";
+  });
+}
+
+let hair__button = document
+  .querySelector("#hair__btn")
+  .addEventListener("click", redirectToHairPage);
+
+function redirectToHairPage() {
+  return Promise.resolve().then(() => {
+    location = "../beauty/hair_page.html";
+  });
+}
+
+let skin__button = document
+  .querySelector("#skin__btn")
+  .addEventListener("click", redirectToSkinPage);
+
+function redirectToSkinPage() {
+  return Promise.resolve().then(() => {
+    location = "../beauty/face_Page.html";
+  });
+}
+
+let baby__button = document
+  .querySelector("#baby__btn")
+  .addEventListener("click", redirectToBabPage);
+
+function redirectToBabPage() {
+  return Promise.resolve().then(() => {
+    location = "../baby/index.html";
+  });
+}
+
+let vitamin__button = document
+  .querySelector("#vitamin")
+  .addEventListener("click", redirectToVitaminPage);
+
+function redirectToVitaminPage() {
+  return Promise.resolve().then(() => {
+    location = "../beauty/gift_packs_page.html";
+  });
+}
+
+let onion__button = document
+  .querySelector("#onion__btn")
+  .addEventListener("click", redirectToOnionPage);
+
+function redirectToOnionPage() {
+  return Promise.resolve().then(() => {
+    location = "../beauty/face_page.html";
+  });
+}
+
+let ubtan__button = document
+  .querySelector("#ubtan__btn")
+  .addEventListener("click", redirectToUbtanPage);
+
+function redirectToUbtanPage() {
+  return Promise.resolve().then(() => {
+    location = "../baby/body.html";
+  });
+}
+
+let wintercare__button = document
+  .querySelector("#wintercare")
+  .addEventListener("click", redirectToWintercarePage);
+
+function redirectToWintercarePage() {
+  return Promise.resolve().then(() => {
+    location = "../beauty/face_page.html";
+  });
+}
+
+let hot_deal__button = document
+  .querySelector("#hot_deal")
+  .addEventListener("click", redirectToHot_dealPage);
+
+function redirectToHot_dealPage() {
+  return Promise.resolve().then(() => {
+    location = "../beauty/hair_page.html";
+  });
 }

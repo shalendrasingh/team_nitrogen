@@ -1,5 +1,7 @@
 .header {
   display: flex;
+  /* border: 1px solid red; */
+  height: 130px;
   flex-direction: column;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
@@ -77,7 +79,7 @@
 }
 .icon-cart,
 .icon-signin {
-  font-size: 24px;
+  font-size: 18px !important;
   margin: 5px;
   color: #5acffa;
 }

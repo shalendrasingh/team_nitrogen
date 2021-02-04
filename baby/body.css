@@ -1,131 +1,135 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .homeToBody {
-    margin-left: 8%;
-    margin-top: 2%
+  margin-left: 8%;
+  margin-top: 2%;
+}
+.icon-cart1,
+.icon-signin1 {
+  font-size: 16px !important;
+  margin: 5px;
+  color: #5acffa;
 }
 
 .homeToBody > button {
-    border: none;
-    cursor: pointer;
-    background-color: white;
-    color: grey;
-    font-size: 15px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  color: grey;
+  font-size: 15px;
 }
 
 .productBox {
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: row;
-    height: 500px;
-    margin: 2% 0;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  margin: 2% 0;
 }
 
 .textBox {
-    /* border: 1px solid black; */
-    height: 140px;
-    width: 25%;
-    margin-left: 8%;
-    margin-top: 13%;
-    margin-right: 10%;
-    text-align: center;
+  /* border: 1px solid black; */
+  height: 140px;
+  width: 25%;
+  margin-left: 8%;
+  margin-top: 13%;
+  margin-right: 10%;
+  text-align: center;
 }
 
 .textBox > h2 {
-    color: #3CA0DA;
-    font-size: 20px;
+  color: #3ca0da;
+  font-size: 20px;
 }
 .textBox > h3 {
-    color: #BCBCBC;
-    font-size: 20px;
+  color: #bcbcbc;
+  font-size: 20px;
 }
 
 .productBox > #cards {
-    width: 18.5%;
+  width: 18.5%;
 }
 
 #buttonsAndSortingForProductsDsiplay {
-    margin: 5%  0 2.5% 8.7%;
+  margin: 5% 0 2.5% 8.7%;
 }
 
 #buttonsAndSortingForProductsDsiplay > button {
-    margin-right: 0.5%;
-    height: 35px; 
-    background-color: white;
-    border: 1px solid lightgrey;
-    cursor: pointer;
-    padding: 0.2%;
-    outline: none;
+  margin-right: 0.5%;
+  height: 35px;
+  background-color: white;
+  border: 1px solid lightgrey;
+  cursor: pointer;
+  padding: 0.2%;
+  outline: none;
 }
 
 #buttonsAndSortingForProductsDsiplay > button:hover {
-    background-color: lightgrey;
+  background-color: lightgrey;
 }
 
 #sortItem {
-    width: 30%;
-    height: 35px;
-    margin-left: 39%;
-    padding-left: 10px;
+  width: 30%;
+  height: 35px;
+  margin-left: 39%;
+  padding-left: 10px;
 }
 
 #card {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 8%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 8%;
 }
 
 #cards {
-    /* border: 1px solid black; */
-    box-shadow: 2px 2px 6px 2px silver;
-    margin: 1%;
-    width: 22.8%;
+  /* border: 1px solid black; */
+  box-shadow: 2px 2px 6px 2px silver;
+  margin: 1%;
+  width: 22.8%;
 }
 
-#cards > h5, #cards > h4 {
-    text-align: center;
-    font-size: 13px;
+#cards > h5,
+#cards > h4 {
+  text-align: center;
+  font-size: 13px;
 }
-
 
 .row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .row > p {
-    border: 1px solid #6DA523;
-    border-radius: 5px;
-    width: fit-content;
-    background-color: #6DA523;
-    margin-left: 16%;
+  border: 1px solid #6da523;
+  border-radius: 5px;
+  width: fit-content;
+  background-color: #6da523;
+  margin-left: 16%;
 }
 
 .row > button {
-    width: 45%;
-    margin-top: 2%;
-    margin-bottom: 5%;
-    margin-left: 15%;
-    border: 1px solid lightgrey;
-    border-radius: 5px;
-    color: #1AB7F1;
-    
+  width: 45%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  color: #1ab7f1;
 }
 
 .row > button:hover {
-    background-color: #1AB7F1;
-    color: white;
+  background-color: #1ab7f1;
+  color: white;
 }
 
 #cards > img {
-    height: 270px;
+  height: 270px;
 }
 
 i {
-    color: white;
+  color: white;
 }
-
