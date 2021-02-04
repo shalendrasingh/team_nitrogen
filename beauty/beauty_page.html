@@ -112,22 +112,21 @@
         <div class="btn__field">
            <div class="btn__field__left">
                 <button id="all">ALL</button>
-                <button id="hair" >HAIR</button>
-                <button>FACE</button>
-                <button>BODY</button>
+                <button id="hair_page">HAIR</button>
+                <button id="face_page">FACE</button>
+                <button id="body">BODY</button>
            </div>
            <div class="button__field__right">
-                 <input type="text" name="sort" id="input" placeholder="Sort By">
-                 <select name="sort" id="sort">
-                     <option value=""></option>
-                     <option value="Rating">Rating</option>
-                     <option value="Price-High to Low">Price- High to Low</option>
-                     <option value="Price-Low to High">Price- Low to High</option>
-                 </select>
+               <select name="sortItem" id="sortItem">
+                  <option value="">Sort By</option>
+                  <option value="rating" id="sortRating">Rating</option>
+                  <option value="high">Price-High to Low</option>
+                  <option value="low">Price-Low to High</option>
+              </select>
            </div>
         </div>
 
-        <div class="cards" id="cards">
+        <div id="card">
 
         </div>
 

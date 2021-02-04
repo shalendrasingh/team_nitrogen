@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
-    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="../footer/">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -109,26 +109,25 @@
         <div class="btn__field">
            <div class="btn__field__left">
                 <button id="all">ALL</button>
-                <button>FACE WASH</button>
-                <button>FACE MASK</button>
-                <button>FACE SCRUB</button>
-                <button>FACE CREAM</button>
-                <button>FACE SERUM</button>
+                <button id="face_wash">FACE WASH</button>
+                <button id="face_mask">FACE MASK</button>
+                <button id="face_scrub">FACE SCRUB</button>
+                <button id="face_cream">FACE CREAM</button>
+                <button id="face_serum">FACE SERUM</button>
                 <button>BODY LOTION</button>
                 <button>BODY BUTTER</button>
            </div>
-           <div class="button__field__right">
-                 <input type="text" name="sort" id="input" placeholder="Sort By">
-                 <select name="sort" id="sort">
-                     <option value=""></option>
-                     <option value="Rating">Rating</option>
-                     <option value="Price-High to Low">Price- High to Low</option>
-                     <option value="Price-Low to High">Price- Low to High</option>
-                 </select>
+           <div class="button__field__right">                
+              <select name="sortItem" id="sortItem">
+                  <option value="">Sort By</option>
+                  <option value="rating" id="sortRating">Rating</option>
+                  <option value="high">Price-High to Low</option>
+                  <option value="low">Price-Low to High</option>
+              </select>
            </div>
         </div>
 
-        <div class="cards" id="cards"></div>
+        <div  id="card"></div>
     </div>
 </div>
 
