@@ -1,12 +1,14 @@
 .text-dark:link {
   text-decoration: none;
 }
-
-.col-rig {
-  width: 300px;
-  position: absolute;
-
-  margin-left: 65%;
+.footer-box-low{
+    position: relative;
+}
+.col-rig{
+    position:absolute;
+    margin-left: 76%;
+    width: 13%;
+    height: 55%;
 }
 
 .footer__div {
@@ -84,17 +86,18 @@
   border-radius: 5px;
 }
 
-#help {
-  width: 100px;
-  height: 0;
-  padding: 20px;
-  transform: rotate(-90deg);
-  position: fixed;
-  color: white;
-  background-color: #008f00;
-  margin: 22% 95%;
-  border-radius: 5px;
-  z-index: 1;
+#help{
+    width: 100px;
+    height: 0;
+    padding: 20px;
+    transform: rotate(-90deg);
+    position:fixed;
+    color: white;
+    background-color: #008f00;
+    margin: 22% 95% ;
+    border-radius: 5px;
+    z-index: 1;
+    cursor: pointer;
 }
 /*  */
 .MultiCarousel {
@@ -160,4 +163,32 @@
 
 .testingEarth {
   margin: 5%;
+}
+
+
+/* login */
+#loginFormBOX{
+    margin: 5%;
+    margin-left: 22%;
+}
+#mobileNoEnter{
+    width: 65%;
+    height: 40px;
+    margin-bottom: 1%;
+    border: 1px solid #dde;
+}
+#mobileNoEnter:focus{
+    outline: none;
+    border-color: #41A8DD;
+}
+#loginBtn{
+    width: 65%;
+    height: 40px;
+    border: none;
+    background-color: #41A8DD;
+    color: white;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 3px;
+    cursor: pointer;
 }
