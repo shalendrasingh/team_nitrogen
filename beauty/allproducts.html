@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy Baby Care Product Online</title>
-    <link rel="stylesheet" href="./baby.css">
+    <title>Buy Natural Care Product Online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
-    <link rel="stylesheet" href="./baby.css">
+    <link rel="stylesheet" href="./allproducts.css">
     <link rel="stylesheet" href="../footer/page.css">
     <link rel="stylesheet" href="../home/style.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -27,9 +26,6 @@
     
 </head>
 <body>
-
-  <!-- mamaearth header starts-->
-
     <div class="header ">
         <div class="offers">
           <p>Asia's brand with MADE SAFE Certified Products</p>
@@ -98,7 +94,7 @@
               <a href="../beauty/gift_packs_page.html" class="nav-links">GIFT PACKS</a>
             </li>
             <li>
-              <a href="../beauty/allproducts.html" class="nav-links">ALL PRODUCTS</a>
+              <a href="./allproducts.html" class="nav-links">ALL PRODUCTS</a>
             </li>
             <li>
               <a href="#" class="nav-links">BLOG</a>
@@ -107,63 +103,22 @@
         </nav>
       </div>
 
-      <!-- mamaearth header ends-->
+
+    <img src="https://mamaearthp.imgix.net/wysiwyg/Hair_Category_1920x512_kdqSqDz.jpg?auto=format" alt="allProductPageImage" id="allProductPageImage">
 
 
-    <img src="https://mamaearthp.imgix.net/wysiwyg/Baby_1920x512_1_dr7MGAG.jpg?auto=format" alt="baby with baby products image" id="babyImage">
-
-
-    <div class="homeToBaby">
-        <button>Home</button> > <button>Baby</button>
+    <div class="homeToShop">
+        <button>Home</button> > <button>Shop</button>
     </div>
-
-    <!-- productbox  starts -->
     
-    <div class="productBox">
-        <div class="textBox">
-            <h2>BestSeller</h2>
-            <h3>Toxin-Free Mamaearth Baby Care Products</h3>
-        </div>
-        <div id="cards">
-          <img src="https://mamaearth.imgix.net/n/o/nourishing-bathing-bars_3.jpg?auto=format&fit=crop&w=300" alt="bathingsoap">
-          <h5>Nourshing Bathing Bar Soap For Kids-(Pack of 5,75gm Each)</h5>
-          <h4>₹499</h4>
-          <div class = "row">
-            <p>5.0<i class="fa fa-star"></i></p>
-            <button>ADD TO CART</button>
-         </div>
-        </div>
-        <div id="cards">
-          <img src="https://mamaearth.imgix.net/_/x/_xl_-diaper_1.jpg?auto=format&fit=crop&w=300" alt="diaper">
-          <h5>Plant-Based Diaper Pants for Babies-12-17 kg(Size XL - 30 Diapers)</h5>
-          <h4>₹999</h4>
-          <div class = "row">
-            <p>5.0<i class="fa fa-star"></i></p>
-            <button>ADD TO CART</button>
-         </div>
-        </div>
-        <div id="cards">
-          <img src="https://mamaearth.imgix.net/p/l/plant-based-multipurpose-cleanser-_1.jpg?auto=format&fit=crop&w=300" alt="cleanser">
-          <h5>Plant-Based Multipurpose Cleanser for Babies- 500ml</h5>
-          <h4>₹499</h4>
-          <div class = "row">
-            <p>4.8<i class="fa fa-star"></i></p>
-            <button>ADD TO CART</button>
-         </div>
-        </div>
-    </div>
-
-    <!-- productbox  ends -->
-
-    <!-- filter and sort starts -->
+    
 
     <div id="buttonsAndSortingForProductsDsiplay">
         <button id="all" >ALL</button>
-        <button id="diaper">DIAPER</button>
-        <button id="shampoo" >SHAMPOO</button>
-        <button id="lotion" >LOTION</button>
-        <button id="oil" >OIL</button>
-        <button id="powder" >POWDER</button>
+        <button id="hair">HAIR</button>
+        <button id="face" >FACE</button>
+        <button id="body" >BODY</button>
+        <button id="baby" >BABY</button>
         
         <select name="sortItem" id="sortItem">
             <option value="">Sort By</option>
@@ -173,14 +128,8 @@
         </select>
     </div>
 
-    <!-- filter and sort ends -->
-
-    <!-- div to display data from mock server -->
-
     <div id="card"></div>
 
-
-    <!-- bottom and footer part -->
 
     <!-- class Help will be on top -->
     <div id="help">
@@ -403,7 +352,7 @@
           </footer>
     </div>
 
-    <script src="./baby.js"></script>
+    <script src="./allproducts.js"></script>
     <script src="../footer/page.js"></script>
     <script src="../home/script.js"></script>
     
