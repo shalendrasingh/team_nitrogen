@@ -3,6 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+a:hover{
+  text-decoration: none;
+}
+
 
 .homeToBody {
   margin-left: 8%;
