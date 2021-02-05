@@ -112,9 +112,9 @@ function goPage(){
     }
     if(flag===true){
         let hp = document.getElementById('home').href
-        alert(hp)
+        // alert(hp)
         location = hp
     }else{
-        alert('Enter Valid Mobile Number or Check again')
+        // alert('Enter Valid Mobile Number or Check again')
     }
 }
