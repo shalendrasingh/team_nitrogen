@@ -45,10 +45,6 @@ function bodyFilter(){
 
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a874ed085bf9aed382700f22d9a7160e9ee10f23
 function showData(){
     // let url = `https://nitrogen-project.herokuapp.com/beauty_page`
     fetch(`https://nitrogen-project.herokuapp.com/beauty_page`)
