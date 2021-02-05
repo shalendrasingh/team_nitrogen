@@ -60,7 +60,7 @@ function generateData(data) {
     let card = createUserCard(data[i], data[i].id);
     // console.log(data[i].id);
     appData.append(card);
-    console.log(card);
+    // console.log(card);
     // appData.innerHTML = card;
   }
 }
@@ -68,7 +68,7 @@ function generateData(data) {
 // code for create card
 
 function createUserCard(item, id) {
-  console.log("object");
+  // console.log("object");
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -103,7 +103,7 @@ function createUserCard(item, id) {
   rating__span.appendChild(icon);
   rating__div.append(rating__span, add_cart_btn);
   card.append(image, description__div, price_tag, rating__div);
-  console.log("wertyui");
+  // console.log("wertyui");
   return card;
 }
 
@@ -111,7 +111,7 @@ let arrForLs = [];
 let arrForPrice = [];
 function showData(id) {
   // // alert();
-  console.log(id);
+  // console.log(id);
   let conditionChekLs = localStorage.getItem("order");
   conditionChekLs = JSON.parse(conditionChekLs);
 
@@ -125,7 +125,7 @@ function showData(id) {
       }
     });
 
-    console.log(orders);
+    // console.log(orders);
 
     let cartShow = {
       id: orders[0].id,
@@ -141,7 +141,7 @@ function showData(id) {
       price: orders[0].price,
     };
 
-    console.log(cartShow);
+    // console.log(cartShow);
 
     arrForLs.push(cartShow);
     arrForPrice.push(priceShow);
@@ -166,10 +166,10 @@ function showData(id) {
 
       localStorage.setItem("order", JSON.stringify(ordersChecks));
     }
-    console.log(count, " count 1");
+    // console.log(count, " count 1");
 
     if (count == 0) {
-      console.log(count, " count m");
+      // console.log(count, " count m");
       let getDataFromLs = localStorage.getItem("cart");
       getDataFromLs = JSON.parse(getDataFromLs);
 
@@ -179,7 +179,7 @@ function showData(id) {
         }
       });
 
-      console.log(orders);
+      // console.log(orders);
 
       let cartShow = {
         id: orders[0].id,
@@ -203,7 +203,7 @@ function showData(id) {
       localStorage.setItem("order", JSON.stringify(arrForLs));
       localStorage.setItem("price", JSON.stringify(arrForPrice));
     }
-    console.log(arrForLs, " erro");
+    // console.log(arrForLs, " erro");
   }
 
   cartDataShowFunc();
@@ -212,7 +212,7 @@ function cartDataShowFunc() {
   let fetchDataFromLocalStr = localStorage.getItem("order");
   fetchDataFromLocalStr = JSON.parse(fetchDataFromLocalStr);
   // fetchDataFromLocalStr.length == 0 ||
-  if (fetchDataFromLocalStr == null) {
+  if (fetchDataFromLocalStr == null || fetchDataFromLocalStr.length === 0) {
     cartDataShow_tag.innerHTML = "";
   } else {
     cartDataShow_tag.innerHTML = fetchDataFromLocalStr.length;
@@ -292,7 +292,7 @@ async function getData2() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   //  localStorage.setItem("cart", JSON.stringify(addToLs));
   generateData2(data);
@@ -401,7 +401,7 @@ async function getData3(val = 5) {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   // console.log(data);
   generateData3(data);
@@ -511,7 +511,7 @@ async function getData4() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData4(data);
 }
@@ -620,7 +620,7 @@ async function getData5() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData5(data);
 }
@@ -729,7 +729,7 @@ async function getData6() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData6(data);
 }
@@ -838,7 +838,7 @@ async function getData7() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData7(data);
 }
@@ -946,7 +946,7 @@ async function getData8() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   // console.log(data);
   generateData8(data);
@@ -1056,7 +1056,7 @@ async function getData9() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData9(data);
 }
@@ -1165,7 +1165,7 @@ async function getData10() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData10(data);
 }
@@ -1257,7 +1257,7 @@ let searchBtn = document
 
 function handleSearchData() {
   let value = searchInputValue.value;
-  console.log(value);
+  // console.log(value);
   let search_result__display = document.querySelector("#search_result");
   search_result__display.innerHTML = "";
 
@@ -1265,7 +1265,7 @@ function handleSearchData() {
     .then((res) => res.json())
     .then((res) => {
       search_result__display.innerHTML = res;
-      console.log(res);
+      // console.log(res);
       generateData11(res);
     });
 }
