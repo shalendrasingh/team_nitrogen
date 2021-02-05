@@ -43,22 +43,32 @@ async function getData() {
   fetchlink = `https://json-server-mocker-projects.herokuapp.com/products?_page=${page}&_limit=3`;
   const data = await fetchApi(fetchlink);
   // console.log(data);
+
+  let addToLs = data;
+
+  localStorage.setItem("cart", JSON.stringify(addToLs));
   generateData(data);
 }
-
+let appData = document.getElementById("app_data_for_best_sell");
+// console.log(appData);
 function generateData(data) {
-  // console.log(data);
-  let appData = document.getElementById("app_data");
+  // console.log(document.getElementById("app_data_for_best_sell"));
+
   appData.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card = createUserCard(data[i]);
-    // console.log(data[i]);
+    let card = createUserCard(data[i], data[i].id);
+    // console.log(data[i].id);
     appData.append(card);
+    console.log(card);
+    // appData.innerHTML = card;
   }
 }
 
-function createUserCard(item) {
+// code for create card
+
+function createUserCard(item, id) {
+  console.log("object");
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -84,23 +94,157 @@ function createUserCard(item) {
   let add_cart_btn = document.createElement("button");
   add_cart_btn.textContent = "ADD TO CART";
   add_cart_btn.className = "btn addBtn";
-
+  add_cart_btn.setAttribute("id", "buy_btn01");
+  add_cart_btn.setAttribute("onclick", `showData(${id})`);
+  // console.log(add_cart_btn, "qqqqqqq");
   let card = document.createElement("div");
   card.classList.add("card");
+
   rating__span.appendChild(icon);
   rating__div.append(rating__span, add_cart_btn);
   card.append(image, description__div, price_tag, rating__div);
-
+  console.log("wertyui");
   return card;
 }
+
+let arrForLs = [];
+let arrForPrice = [];
+function showData(id) {
+  // // alert();
+  console.log(id);
+  let conditionChekLs = localStorage.getItem("order");
+  conditionChekLs = JSON.parse(conditionChekLs);
+
+  if (conditionChekLs == null || conditionChekLs.length == 0) {
+    let getDataFromLs = localStorage.getItem("cart");
+    getDataFromLs = JSON.parse(getDataFromLs);
+
+    let orders = getDataFromLs.filter((item) => {
+      if (item.id == id) {
+        return item;
+      }
+    });
+
+    console.log(orders);
+
+    let cartShow = {
+      id: orders[0].id,
+      description: orders[0].description,
+      img: orders[0].img,
+      price: orders[0].price,
+
+      quantity: 1,
+    };
+
+    let priceShow = {
+      id: orders[0].id,
+      price: orders[0].price,
+    };
+
+    console.log(cartShow);
+
+    arrForLs.push(cartShow);
+    arrForPrice.push(priceShow);
+
+    localStorage.setItem("order", JSON.stringify(arrForLs));
+    localStorage.setItem("price", JSON.stringify(arrForPrice));
+  } else {
+    let count = 0;
+    let ordersChecks = conditionChekLs.filter((item) => {
+      if (item.id === id) {
+        count++;
+        return (item.quantity = item.quantity + 1);
+      } else {
+        return item;
+      }
+    });
+
+    // console.log(ordersChecks.length);
+
+    if (count !== 0) {
+      // arrForLs.push(ordersChecks);
+
+      localStorage.setItem("order", JSON.stringify(ordersChecks));
+    }
+    console.log(count, " count 1");
+
+    if (count == 0) {
+      console.log(count, " count m");
+      let getDataFromLs = localStorage.getItem("cart");
+      getDataFromLs = JSON.parse(getDataFromLs);
+
+      let orders = getDataFromLs.filter((item) => {
+        if (item.id == id) {
+          return item;
+        }
+      });
+
+      console.log(orders);
+
+      let cartShow = {
+        id: orders[0].id,
+        description: orders[0].description,
+        img: orders[0].img,
+        price: orders[0].price,
+
+        quantity: 1,
+      };
+
+      let priceShow = {
+        id: orders[0].id,
+        price: orders[0].price,
+      };
+
+      // console.log(cartShow);
+      // arrForLs = [];
+      arrForLs.push(cartShow);
+      arrForPrice.push(priceShow);
+
+      localStorage.setItem("order", JSON.stringify(arrForLs));
+      localStorage.setItem("price", JSON.stringify(arrForPrice));
+    }
+    console.log(arrForLs, " erro");
+  }
+
+  cartDataShowFunc();
+}
+function cartDataShowFunc() {
+  let fetchDataFromLocalStr = localStorage.getItem("order");
+  fetchDataFromLocalStr = JSON.parse(fetchDataFromLocalStr);
+  // fetchDataFromLocalStr.length == 0 ||
+  if (fetchDataFromLocalStr == null) {
+    cartDataShow_tag.innerHTML = "";
+  } else {
+    cartDataShow_tag.innerHTML = fetchDataFromLocalStr.length;
+  }
+}
+cartDataShowFunc();
+
+// code for fetchand sho
+
+// onload(displaytoCheckoutPage());
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // code for 2
 
 let items2 = document.getElementById("items2");
-let page2 = 1;
+var page2 = 1;
 
 window.addEventListener("load", function () {
   getData2();
+
   items2.addEventListener("change", changePerPage2);
   document.getElementById("next2").addEventListener("click", () => {
     changePage2(+1);
@@ -137,26 +281,35 @@ async function fetchApi(url) {
   return data;
 }
 
-async function getData2(val = 5) {
-  fetchlink2 = `https://json-server-mocker-projects.herokuapp.com/best?_page=${page2}&_limit=3`;
+async function getData2() {
+  fetchlink2 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page2}&_limit=3`;
   const data = await fetchApi(fetchlink2);
   // console.log(data);
+  let getCartlsdata = localStorage.getItem("cart");
+  getCartlsdata = JSON.parse(getCartlsdata);
+  //  let addToLs = data;
+
+  for (let i = 0; i < data.length; i++) {
+    getCartlsdata.push(data[i]);
+  }
+  console.log(getCartlsdata, "singh");
+  localStorage.setItem("cart", JSON.stringify(getCartlsdata));
+  //  localStorage.setItem("cart", JSON.stringify(addToLs));
   generateData2(data);
 }
-
 function generateData2(data) {
   // console.log(data);
-  let appData = document.getElementById("myApp_data");
-  appData.innerHTML = "";
+  let appData2 = document.getElementById("myApp_data");
+  appData2.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card2 = createUserCard(data[i]);
+    let card2 = createUserCard2(data[i], data[i].id);
     // console.log(data[i]);
-    appData.append(card2);
+    appData2.append(card2);
   }
 }
 
-function createUserCard(item) {
+function createUserCard2(item, id) {
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -182,6 +335,8 @@ function createUserCard(item) {
   let add_cart_btn = document.createElement("button");
   add_cart_btn.textContent = "ADD TO CART";
   add_cart_btn.className = "btn addBtn";
+  add_cart_btn.setAttribute("id", "buy_btn2");
+  add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card2 = document.createElement("div");
   card2.classList.add("card");
@@ -238,23 +393,33 @@ async function fetchApi(url) {
 async function getData3(val = 5) {
   fetchlink3 = `https://json-server-mocker-projects.herokuapp.com/hair_page?_page=${page3}&_limit=3`;
   const data = await fetchApi(fetchlink3);
+
+  let getCartlsdata = localStorage.getItem("cart");
+  getCartlsdata = JSON.parse(getCartlsdata);
+  //  let addToLs = data;
+
+  for (let i = 0; i < data.length; i++) {
+    getCartlsdata.push(data[i]);
+  }
+  console.log(getCartlsdata, "singh");
+  localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   // console.log(data);
   generateData3(data);
 }
 
 function generateData3(data) {
   // console.log(data);
-  let appData = document.getElementById("myApp_data3");
-  appData.innerHTML = "";
+  let appData3 = document.getElementById("myApp_data3");
+  appData3.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card3 = createUserCard(data[i]);
+    let card3 = createUserCard3(data[i], data[i].id);
     // console.log(data[i]);
-    appData.append(card3);
+    appData3.append(card3);
   }
 }
 
-function createUserCard(item) {
+function createUserCard3(item, id) {
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -280,6 +445,8 @@ function createUserCard(item) {
   let add_cart_btn = document.createElement("button");
   add_cart_btn.textContent = "ADD TO CART";
   add_cart_btn.className = "btn addBtn";
+  add_cart_btn.setAttribute("id", "buy_btn3");
+  add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card3 = document.createElement("div");
   card3.classList.add("card");
@@ -334,25 +501,34 @@ async function fetchApi(url) {
 }
 
 async function getData4() {
-  fetchlink4 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page4}&_limit=3`;
+  fetchlink4 = `https://json-server-mocker-projects.herokuapp.com/best?_page=${page4}&_limit=3`;
   const data = await fetchApi(fetchlink4);
   // console.log(data);
+  let getCartlsdata = localStorage.getItem("cart");
+  getCartlsdata = JSON.parse(getCartlsdata);
+  //  let addToLs = data;
+
+  for (let i = 0; i < data.length; i++) {
+    getCartlsdata.push(data[i]);
+  }
+  console.log(getCartlsdata, "singh");
+  localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData4(data);
 }
 
 function generateData4(data) {
   // console.log(data);
-  let appData = document.getElementById("myApp_data4");
-  appData.innerHTML = "";
+  let appData4 = document.getElementById("myApp_data4");
+  appData4.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card4 = createUserCard(data[i]);
+    let card4 = createUserCard4(data[i], data[i].id);
     // console.log(data[i]);
-    appData.append(card4);
+    appData4.append(card4);
   }
 }
 
-function createUserCard(item) {
+function createUserCard4(item, id) {
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -378,6 +554,8 @@ function createUserCard(item) {
   let add_cart_btn = document.createElement("button");
   add_cart_btn.textContent = "ADD TO CART";
   add_cart_btn.className = "btn addBtn";
+  add_cart_btn.setAttribute("id", "buy_btn4");
+  add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card4 = document.createElement("div");
   card4.classList.add("card");
@@ -435,22 +613,31 @@ async function getData5() {
   fetchlink5 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page5}&_limit=3`;
   const data = await fetchApi(fetchlink5);
   // console.log(data);
+  let getCartlsdata = localStorage.getItem("cart");
+  getCartlsdata = JSON.parse(getCartlsdata);
+  //  let addToLs = data;
+
+  for (let i = 0; i < data.length; i++) {
+    getCartlsdata.push(data[i]);
+  }
+  console.log(getCartlsdata, "singh");
+  localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData5(data);
 }
 
 function generateData5(data) {
   // console.log(data);
-  let appData = document.getElementById("myApp_data5");
-  appData.innerHTML = "";
+  let appData5 = document.getElementById("myApp_data5");
+  appData5.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card5 = createUserCard(data[i]);
+    let card5 = createUserCard5(data[i], data[i].id);
     // console.log(data[i]);
-    appData.append(card5);
+    appData5.append(card5);
   }
 }
 
-function createUserCard(item) {
+function createUserCard5(item, id) {
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -476,6 +663,8 @@ function createUserCard(item) {
   let add_cart_btn = document.createElement("button");
   add_cart_btn.textContent = "ADD TO CART";
   add_cart_btn.className = "btn addBtn";
+  add_cart_btn.setAttribute("id", "buy_btn5");
+  add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card5 = document.createElement("div");
   card5.classList.add("card");
@@ -530,25 +719,34 @@ async function fetchApi(url) {
 }
 
 async function getData6() {
-  fetchlink6 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page6}&_limit=3`;
+  fetchlink6 = `https://json-server-mocker-projects.herokuapp.com/products?_page=${page6}&_limit=3`;
   const data = await fetchApi(fetchlink6);
   // console.log(data);
+  let getCartlsdata = localStorage.getItem("cart");
+  getCartlsdata = JSON.parse(getCartlsdata);
+  //  let addToLs = data;
+
+  for (let i = 0; i < data.length; i++) {
+    getCartlsdata.push(data[i]);
+  }
+  console.log(getCartlsdata, "singh");
+  localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData6(data);
 }
 
 function generateData6(data) {
   // console.log(data);
-  let appData = document.getElementById("myApp_data6");
-  appData.innerHTML = "";
+  let appData6 = document.getElementById("myApp_data6");
+  appData6.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card6 = createUserCard(data[i]);
+    let card6 = createUserCard6(data[i], data[i].id);
     // console.log(data[i]);
-    appData.append(card6);
+    appData6.append(card6);
   }
 }
 
-function createUserCard(item) {
+function createUserCard6(item, id) {
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -574,6 +772,8 @@ function createUserCard(item) {
   let add_cart_btn = document.createElement("button");
   add_cart_btn.textContent = "ADD TO CART";
   add_cart_btn.className = "btn addBtn";
+  add_cart_btn.setAttribute("id", "buy_btn6");
+  add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card6 = document.createElement("div");
   card6.classList.add("card");
@@ -631,22 +831,31 @@ async function getData7() {
   fetchlink7 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page7}&_limit=3`;
   const data = await fetchApi(fetchlink7);
   // console.log(data);
+  let getCartlsdata = localStorage.getItem("cart");
+  getCartlsdata = JSON.parse(getCartlsdata);
+  //  let addToLs = data;
+
+  for (let i = 0; i < data.length; i++) {
+    getCartlsdata.push(data[i]);
+  }
+  console.log(getCartlsdata, "singh");
+  localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData7(data);
 }
 
 function generateData7(data) {
   // console.log(data);
-  let appData = document.getElementById("myApp_data7");
-  appData.innerHTML = "";
+  let appData7 = document.getElementById("myApp_data7");
+  appData7.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card7 = createUserCard(data[i]);
+    let card7 = createUserCard7(data[i], data[i].id);
     // console.log(data[i]);
-    appData.append(card7);
+    appData7.append(card7);
   }
 }
 
-function createUserCard(item) {
+function createUserCard7(item, id) {
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -672,6 +881,8 @@ function createUserCard(item) {
   let add_cart_btn = document.createElement("button");
   add_cart_btn.textContent = "ADD TO CART";
   add_cart_btn.className = "btn addBtn";
+  add_cart_btn.setAttribute("id", "buy_btn7");
+  add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card7 = document.createElement("div");
   card7.classList.add("card");
@@ -728,23 +939,32 @@ async function fetchApi(url) {
 async function getData8() {
   fetchlink8 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page8}&_limit=3`;
   const data = await fetchApi(fetchlink8);
+  let getCartlsdata = localStorage.getItem("cart");
+  getCartlsdata = JSON.parse(getCartlsdata);
+  //  let addToLs = data;
+
+  for (let i = 0; i < data.length; i++) {
+    getCartlsdata.push(data[i]);
+  }
+  console.log(getCartlsdata, "singh");
+  localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   // console.log(data);
   generateData8(data);
 }
 
 function generateData8(data) {
   // console.log(data);
-  let appData = document.getElementById("myApp_data8");
-  appData.innerHTML = "";
+  let appData8 = document.getElementById("myApp_data8");
+  appData8.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card8 = createUserCard(data[i]);
+    let card8 = createUserCard8(data[i], data[i].id);
     // console.log(data[i]);
-    appData.append(card8);
+    appData8.append(card8);
   }
 }
 
-function createUserCard(item) {
+function createUserCard8(item, id) {
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -770,6 +990,8 @@ function createUserCard(item) {
   let add_cart_btn = document.createElement("button");
   add_cart_btn.textContent = "ADD TO CART";
   add_cart_btn.className = "btn addBtn";
+  add_cart_btn.setAttribute("id", "buy_btn8");
+  add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card8 = document.createElement("div");
   card8.classList.add("card");
@@ -827,22 +1049,31 @@ async function getData9() {
   fetchlink9 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page9}&_limit=3`;
   const data = await fetchApi(fetchlink9);
   // console.log(data);
+  let getCartlsdata = localStorage.getItem("cart");
+  getCartlsdata = JSON.parse(getCartlsdata);
+  //  let addToLs = data;
+
+  for (let i = 0; i < data.length; i++) {
+    getCartlsdata.push(data[i]);
+  }
+  console.log(getCartlsdata, "singh");
+  localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData9(data);
 }
 
 function generateData9(data) {
   // console.log(data);
-  let appData = document.getElementById("myApp_data9");
-  appData.innerHTML = "";
+  let appData9 = document.getElementById("myApp_data9");
+  appData9.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card9 = createUserCard(data[i]);
+    let card9 = createUserCard9(data[i], data[i].id);
     // console.log(data[i]);
-    appData.append(card9);
+    appData9.append(card9);
   }
 }
 
-function createUserCard(item) {
+function createUserCard9(item, id) {
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -868,6 +1099,8 @@ function createUserCard(item) {
   let add_cart_btn = document.createElement("button");
   add_cart_btn.textContent = "ADD TO CART";
   add_cart_btn.className = "btn addBtn";
+  add_cart_btn.setAttribute("id", "buy_btn9");
+  add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card9 = document.createElement("div");
   card9.classList.add("card");
@@ -925,22 +1158,32 @@ async function getData10() {
   fetchlink10 = `https://json-server-mocker-projects.herokuapp.com/face_page?_page=${page10}&_limit=3`;
   const data = await fetchApi(fetchlink10);
   // console.log(data);
+  let getCartlsdata = localStorage.getItem("cart");
+  getCartlsdata = JSON.parse(getCartlsdata);
+  //  let addToLs = data;
+
+  for (let i = 0; i < data.length; i++) {
+    getCartlsdata.push(data[i]);
+  }
+  console.log(getCartlsdata, "singh");
+  localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData10(data);
 }
 
 function generateData10(data) {
   // console.log(data);
-  let appData = document.getElementById("myApp_data10");
-  appData.innerHTML = "";
+  let appData10 = document.getElementById("myApp_data10");
+  appData10.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card10 = createUserCard(data[i]);
+    let card10 = createUserCard10(data[i], data[i].id);
     // console.log(data[i]);
-    appData.append(card10);
+
+    appData10.append(card10);
   }
 }
 
-function createUserCard(item) {
+function createUserCard10(item, id) {
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -966,6 +1209,8 @@ function createUserCard(item) {
   let add_cart_btn = document.createElement("button");
   add_cart_btn.textContent = "ADD TO CART";
   add_cart_btn.className = "btn addBtn";
+  add_cart_btn.setAttribute("id", "buy_btn10");
+  add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card10 = document.createElement("div");
   card10.classList.add("card");
@@ -1033,13 +1278,13 @@ function generateData11(data) {
   search_result.innerHTML = "";
   let len = data.length;
   for (let i = 0; i < len; i++) {
-    let card11 = createUserCard(data[i]);
+    let card11 = createUserCard11(data[i]);
     // console.log(data[i]);
     search_result.append(card11);
   }
 }
 
-function createUserCard(item) {
+function createUserCard11(item) {
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -1085,104 +1330,114 @@ function createUserCard(item) {
 
 // code for routing the page
 
-let best__seller__button = document
-  .querySelector("#best__seller__btn")
-  .addEventListener("click", redirectToBabyPage);
+// let best__seller__button = document
+//   .querySelector("#best__seller__btn")
+//   .addEventListener("click", redirectToBabyPage);
 
-function redirectToBabyPage() {
+// function redirectToBabyPage() {
+//   return Promise.resolve().then(() => {
+//     location = "../baby/index.html";
+
+//     console.log("object");
+//   });
+// }
+
+// let best__deal__button = document
+//   .querySelector("#best__deal__btn")
+//   .addEventListener("click", redirectToDealPage);
+
+// function redirectToDealPage() {
+//   return Promise.resolve().then(() => {
+//     location = "../beauty/beauty_page.html";
+//   });
+// }
+
+// let hair__button = document
+//   .querySelector("#hair__btn")
+//   .addEventListener("click", redirectToHairPage);
+
+// function redirectToHairPage() {
+//   return Promise.resolve().then(() => {
+//     location = "../beauty/hair_page.html";
+//   });
+// }
+
+// let skin__button = document
+//   .querySelector("#skin__btn")
+//   .addEventListener("click", redirectToSkinPage);
+
+// function redirectToSkinPage() {
+//   return Promise.resolve().then(() => {
+//     location = "../beauty/face_Page.html";
+//   });
+// }
+
+// let baby__button = document
+//   .querySelector("#baby__btn")
+//   .addEventListener("click", redirectToBabPage);
+
+// function redirectToBabPage() {
+//   return Promise.resolve().then(() => {
+//     location = "../baby/index.html";
+//   });
+// }
+
+// let vitamin__button = document
+//   .querySelector("#vitamin")
+//   .addEventListener("click", redirectToVitaminPage);
+
+// function redirectToVitaminPage() {
+//   return Promise.resolve().then(() => {
+//     location = "../beauty/gift_packs_page.html";
+//   });
+// }
+
+// let onion__button = document
+//   .querySelector("#onion__btn")
+//   .addEventListener("click", redirectToOnionPage);
+
+// function redirectToOnionPage() {
+//   return Promise.resolve().then(() => {
+//     location = "../beauty/face_page.html";
+//   });
+// }
+
+// let ubtan__button = document
+//   .querySelector("#ubtan__btn")
+//   .addEventListener("click", redirectToUbtanPage);
+
+// function redirectToUbtanPage() {
+//   return Promise.resolve().then(() => {
+//     location = "../baby/body.html";
+//   });
+// }
+
+// let wintercare__button = document
+//   .querySelector("#wintercare")
+//   .addEventListener("click", redirectToWintercarePage);
+
+// function redirectToWintercarePage() {
+//   return Promise.resolve().then(() => {
+//     location = "../beauty/face_page.html";
+//   });
+// }
+
+// let hot_deal__button = document
+//   .querySelector("#hot_deal")
+//   .addEventListener("click", redirectToHot_dealPage);
+
+// function redirectToHot_dealPage() {
+//   return Promise.resolve().then(() => {
+//     location = "../beauty/hair_page.html";
+//   });
+// }
+
+document
+  .getElementById("click_cartbtn")
+  .addEventListener("click", redirectToclick_cartbtnPage);
+
+function redirectToclick_cartbtnPage() {
   return Promise.resolve().then(() => {
-    location = "../baby/index.html";
-
-    console.log("object");
-  });
-}
-
-let best__deal__button = document
-  .querySelector("#best__deal__btn")
-  .addEventListener("click", redirectToDealPage);
-
-function redirectToDealPage() {
-  return Promise.resolve().then(() => {
-    location = "../beauty/beauty_page.html";
-  });
-}
-
-let hair__button = document
-  .querySelector("#hair__btn")
-  .addEventListener("click", redirectToHairPage);
-
-function redirectToHairPage() {
-  return Promise.resolve().then(() => {
-    location = "../beauty/hair_page.html";
-  });
-}
-
-let skin__button = document
-  .querySelector("#skin__btn")
-  .addEventListener("click", redirectToSkinPage);
-
-function redirectToSkinPage() {
-  return Promise.resolve().then(() => {
-    location = "../beauty/face_Page.html";
-  });
-}
-
-let baby__button = document
-  .querySelector("#baby__btn")
-  .addEventListener("click", redirectToBabPage);
-
-function redirectToBabPage() {
-  return Promise.resolve().then(() => {
-    location = "../baby/index.html";
-  });
-}
-
-let vitamin__button = document
-  .querySelector("#vitamin")
-  .addEventListener("click", redirectToVitaminPage);
-
-function redirectToVitaminPage() {
-  return Promise.resolve().then(() => {
-    location = "../beauty/gift_packs_page.html";
-  });
-}
-
-let onion__button = document
-  .querySelector("#onion__btn")
-  .addEventListener("click", redirectToOnionPage);
-
-function redirectToOnionPage() {
-  return Promise.resolve().then(() => {
-    location = "../beauty/face_page.html";
-  });
-}
-
-let ubtan__button = document
-  .querySelector("#ubtan__btn")
-  .addEventListener("click", redirectToUbtanPage);
-
-function redirectToUbtanPage() {
-  return Promise.resolve().then(() => {
-    location = "../baby/body.html";
-  });
-}
-
-let wintercare__button = document
-  .querySelector("#wintercare")
-  .addEventListener("click", redirectToWintercarePage);
-
-function redirectToWintercarePage() {
-  return Promise.resolve().then(() => {
-    location = "../beauty/face_page.html";
-  });
-}
-
-let hot_deal__button = document
-  .querySelector("#hot_deal")
-  .addEventListener("click", redirectToHot_dealPage);
-
-function redirectToHot_dealPage() {
-  return Promise.resolve().then(() => {
-    location = "../beauty/hair_page.html";
+    location = "./checkout.html";
   });
 }
