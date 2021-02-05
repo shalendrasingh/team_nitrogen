@@ -98,11 +98,20 @@ function createUserCard(item, id) {
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
   // console.log(add_cart_btn, "qqqqqqq");
   let card = document.createElement("div");
+
   card.classList.add("card");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
 
   rating__span.appendChild(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card.append(image, description__div, price_tag, rating__div);
+  card.append(image, description__div, price_tag, rating__div, tag);
   // console.log("wertyui");
   return card;
 }
@@ -340,9 +349,17 @@ function createUserCard2(item, id) {
 
   let card2 = document.createElement("div");
   card2.classList.add("card");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card2.append(image, description__div, price_tag, rating__div);
+  card2.append(image, description__div, price_tag, rating__div, tag);
 
   return card2;
 }
@@ -448,11 +465,19 @@ function createUserCard3(item, id) {
   add_cart_btn.setAttribute("id", "buy_btn3");
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
+
   let card3 = document.createElement("div");
   card3.classList.add("card");
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card3.append(image, description__div, price_tag, rating__div);
+  card3.append(image, description__div, price_tag, rating__div, tag);
 
   return card3;
 }
@@ -556,12 +581,19 @@ function createUserCard4(item, id) {
   add_cart_btn.className = "btn addBtn";
   add_cart_btn.setAttribute("id", "buy_btn4");
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
 
   let card4 = document.createElement("div");
   card4.classList.add("card");
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card4.append(image, description__div, price_tag, rating__div);
+  card4.append(image, description__div, price_tag, rating__div, tag);
 
   return card4;
 }
@@ -665,12 +697,18 @@ function createUserCard5(item, id) {
   add_cart_btn.className = "btn addBtn";
   add_cart_btn.setAttribute("id", "buy_btn5");
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
 
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   let card5 = document.createElement("div");
   card5.classList.add("card");
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card5.append(image, description__div, price_tag, rating__div);
+  card5.append(image, description__div, price_tag, rating__div, tag);
 
   return card5;
 }
@@ -775,11 +813,19 @@ function createUserCard6(item, id) {
   add_cart_btn.setAttribute("id", "buy_btn6");
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
+
   let card6 = document.createElement("div");
   card6.classList.add("card");
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card6.append(image, description__div, price_tag, rating__div);
+  card6.append(image, description__div, price_tag, rating__div, tag);
 
   return card6;
 }
@@ -886,9 +932,17 @@ function createUserCard7(item, id) {
 
   let card7 = document.createElement("div");
   card7.classList.add("card");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card7.append(image, description__div, price_tag, rating__div);
+  card7.append(image, description__div, price_tag, rating__div, tag);
 
   return card7;
 }
@@ -995,9 +1049,17 @@ function createUserCard8(item, id) {
 
   let card8 = document.createElement("div");
   card8.classList.add("card");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card8.append(image, description__div, price_tag, rating__div);
+  card8.append(image, description__div, price_tag, rating__div, tag);
 
   return card8;
 }
@@ -1103,10 +1165,18 @@ function createUserCard9(item, id) {
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card9 = document.createElement("div");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   card9.classList.add("card");
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card9.append(image, description__div, price_tag, rating__div);
+  card9.append(image, description__div, price_tag, rating__div, tag);
 
   return card9;
 }
@@ -1317,7 +1387,7 @@ function createUserCard11(item) {
 
   let tagname = document.createElement("div");
   tagname.className = "tag";
-  tagname.textContent = "Best Seller";
+  tagname.textContent = "New Launch";
   tag.append(tagname);
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
