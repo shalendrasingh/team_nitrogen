@@ -200,8 +200,10 @@ body {
 .btn__field__left button:hover {
   transform: scale(1.05);
 }
-
-
+.image img{
+  width: 100%;
+  height: 350px;
+}
 #sortItem {
   width: 40%;
   height: 35px;
@@ -213,21 +215,21 @@ body {
 #sortItem:focus{
   outline: none;
 }
-
-
+a:hover{
+  text-decoration: none;
+}
 
 #card {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 10%;
-  margin-top: 50px;
+  margin: 1% 10%;
 }
 
 #cards {
   /* border: 1px solid black; */
   box-shadow: 2px 2px 6px 2px silver;
   margin: 1%;
-  width: 23%;
+  width: 22.8%;
 }
 
 #cards > h5,
@@ -239,8 +241,6 @@ body {
 .row {
   display: flex;
   flex-direction: row;
-  /* width: 60px; */
-  align-items: center;
 }
 
 .row > p {
@@ -250,10 +250,6 @@ body {
   background-color: #6da523;
   padding: 1%;
   margin-left: 16%;
-  width: 45px;
-  height: 25px;
-  color: #FFFFFF;
-  
 }
 
 .row > button {
@@ -261,11 +257,9 @@ body {
   margin-top: 2%;
   margin-bottom: 5%;
   margin-left: 15%;
-  border: 1px solid rgba(128, 128, 128, 0.473);
+  border: 1px solid lightgrey;
   border-radius: 5px;
   color: #1ab7f1;
-  height: 25px;
-  background-color: #FFFFFF;
 }
 
 .row > button:hover {
@@ -274,24 +268,13 @@ body {
 }
 
 #cards > img {
-   /* height: 270px; */
-   margin-bottom: 15%;
-  width: 100%;
+  height: 270px;
+  margin-bottom: 15%;
 }
 
 i {
   color: white;
 }
-
-#all{
-  margin-left: 146px;
-}
-
-
-#face_serum{
-  margin-left: 145px;
-}
-
 
 
 /* footer start css */

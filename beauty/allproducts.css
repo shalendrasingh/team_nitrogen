@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .icon-car,
+  .icon-signi {
+    font-size: 16px;
+    margin: 5px;
+    color: #5acffa;
+  }
+  .icon-search {
+    font-size: 20px;
+    margin: 10px;
+    color: #ffffff;
+  }
+  
+  #allProductPageImage {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .homeToShop {
+    margin-left: 8%;
+    margin-top: 1%;
+  }
+  
+  .homeToShop > button {
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    color: grey;
+    font-size: 15px;
+  }
+  
+  #buttonsAndSortingForProductsDsiplay {
+    margin: 1% 0 2.5% 10.7%;
+  }
+  
+  #buttonsAndSortingForProductsDsiplay > button {
+    margin-right: 0.5%;
+    height: 35px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    padding: 0.5%;
+    outline: none;
+  }
+  
+  #buttonsAndSortingForProductsDsiplay > button:hover {
+    background-color: lightgrey;
+  }
+  
+  #sortItem {
+    width: 30%;
+    height: 35px;
+    margin-left: 23%;
+    padding-left: 10px;
+    border: 2px solid #1ab7f1;
+    border-radius: 5px;
+    opacity: 0.7;
+  }
+  
+  #card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10%;
+  }
+  
+  #cards {
+    /* border: 1px solid black; */
+    box-shadow: 2px 2px 6px 2px silver;
+    margin: 1%;
+    width: 22.8%;
+  }
+  
+  #cards > h5,
+  #cards > h4 {
+    text-align: center;
+    font-size: 13px;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .row > p {
+    border: 1px solid #6da523;
+    border-radius: 5px;
+    width: fit-content;
+    background-color: #6da523;
+    padding: 1%;
+    margin-left: 16%;
+  }
+  
+  .row > button {
+    width: 45%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    color: #1ab7f1;
+  }
+  
+  .row > button:hover {
+    background-color: #1ab7f1;
+    color: white;
+  }
+  
+  #cards > img {
+    height: 270px;
+    margin-bottom: 15%;
+  }
+  
+  i {
+    color: white;
+  }
+  

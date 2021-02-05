@@ -160,7 +160,7 @@ body {
 /* End css of header */
 
 .total_middle {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 90%;
   height: 750px;
   margin: 20px auto;
@@ -171,7 +171,7 @@ body {
   height: 750px;
 }
 .total_middle_right {
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   width: 50%;
   height: 100%;
 }
@@ -191,7 +191,6 @@ body {
   color: white;
 }
 .user_btn {
-  /* border: 1px solid red; */
   width: 220px;
   display: flex;
   align-items: center;
@@ -200,7 +199,6 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 12px;
-  /* margin: 30px 0 0 30px; */
 }
 .user_btn > h4 {
   padding: 0;
@@ -223,14 +221,6 @@ body {
   padding-bottom: 20px;
 }
 
-/* .form2 {
-  display: flex;
-  flex-direction: row;
-} */
-/* .form p {
-  padding: 10px;
-  font-weight: bold;
-} */
 .form .inp1 {
   outline: none;
 }
@@ -250,18 +240,10 @@ body {
 }
 
 .ship > p {
-  /* color: red; */
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 14px;
-  /* display: flex; */
-  /* flex-direction: ; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* width: 50%; */
   margin: 30px !important;
-  /* border: 1px solid red; */
-  /* margin-top: 20px !important; */
 }
 .form label {
   font-size: 15px;
@@ -489,7 +471,6 @@ input::placeholder {
 .btn_apply {
   color: #ffffff;
   font-weight: 700;
-  /* font-size: 14px; */
   background-color: #00afef;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -498,9 +479,6 @@ input::placeholder {
 .btn_apply2 {
   width: 100px;
   height: 32px;
-  /* background-color: #f6f6f6; */
-  /* color: #003a18; */
-  /* border: 1px solid #303030; */
 }
 .top_div > p {
   text-align: center;
@@ -527,7 +505,6 @@ input::placeholder {
   justify-content: space-between;
   margin: 15px;
   font-weight: 400;
-  /* font-size: 20px; */
 }
 
 .dis_amnt {
@@ -545,18 +522,17 @@ input::placeholder {
   width: 95%;
   margin: auto;
   height: 35px;
-  border: 1px solid #303030;
-  background-color: #f6f6f6;
+  border: none;
+  background-color: #5ACFFA;
+  color: white;
+
 }
 
 .purched_item_div {
-  /* width: ; */
-  /* height: 90px; */
-  border: 1px solid red;
+  border: 1px solid rgb(209, 203, 203);
   align-items: center;
   color: red;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
 }
 
@@ -569,7 +545,6 @@ input::placeholder {
 .imgDiv {
   width: 100px;
   height: 100px;
-  border: 1px solid red;
   display: flex;
   align-items: center;
 }
@@ -579,21 +554,12 @@ input::placeholder {
 }
 
 .secondDiv {
-  border: 1px solid black;
-  /* width: ; */
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
   flex-direction: column;
-  /* font-size: 12px; */
-  /* width: 80%;
-  height: 80px; */
-  /* margin: auto; */
 }
 
 .pDesc {
   padding: 0px !important;
-  /* margin: 0px !important; */
   margin: 8px 2px 0 8px;
   text-align: justify;
   font-weight: 700;
@@ -603,24 +569,19 @@ input::placeholder {
 
 .priceTag {
   margin: 8px 0 0 8px;
-  /* text-align: justify; */
   font-weight: 700;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
 
 .button___div {
-  /* width: 400px; */
   height: 20px;
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
   margin: 10px;
 }
 
 .buttonMainDiv {
-  /* border: 1px solid red; */
   display: flex;
   width: 420px;
   margin: auto;
@@ -637,4 +598,11 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.grand__total {
+  text-align: justify;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
 }

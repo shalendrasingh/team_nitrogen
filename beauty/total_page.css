@@ -4,6 +4,10 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
+a:hover{
+  text-decoration: none;
+}
+
 
 .header {
   display: flex;
