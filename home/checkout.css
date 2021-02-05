@@ -160,7 +160,7 @@ body {
 /* End css of header */
 
 .total_middle {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 90%;
   height: 750px;
   margin: 20px auto;
@@ -171,7 +171,7 @@ body {
   height: 750px;
 }
 .total_middle_right {
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   width: 50%;
   height: 100%;
 }
@@ -522,8 +522,10 @@ input::placeholder {
   width: 95%;
   margin: auto;
   height: 35px;
-  border: 1px solid #303030;
-  background-color: #f6f6f6;
+  border: none;
+  background-color: #5ACFFA;
+  color: white;
+
 }
 
 .purched_item_div {
