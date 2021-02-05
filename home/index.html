@@ -71,8 +71,9 @@
           </button>
         </div>
         <div class="cart__signIn__div">
-          <button class="cart__btn">
+          <button class="cart__btn" id="click_cartbtn">
             <i class="fa fa-shopping-cart icon-cart"></i>Cart
+            <span id="cartDataShow_tag"></span>
           </button>
           <button class="sign__btn">
             <i class="fa fa-user icon-signin"></i>Sign In
@@ -174,7 +175,7 @@
             <div class="myDemo ">
                 <section class="pagination_section wrapper" id="items">
                     <span class="arrow_prev" id="prev">&#8249</span>
-                    <div class="container app_data" id="app_data"></div>
+                    <div class="container app_data" id="app_data_for_best_sell"></div>
                     <span class="arrow_next" id="next">&#8250</span>
                 </section>
             </div>
@@ -472,124 +473,7 @@
             <h3>What Our Customers Say</h3>
             <img src="https://mamaearthp.imgix.net/wysiwyg/strip2x.png?auto=format" style="height: 1.75px; width: 20vw; margin-right: 10px; margin-top: -30px;">
         </div>
-        <!-- <div class="container" style="border: 1px solid red !important;" >
-            <div class="row">
-                <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
-                    <div class="MultiCarousel-inner">
-                        <div class="item">
-                            <div class="pad15">
-                                <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                                <div class="information">
-                                    <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
-                                    <div>
-                                        <p></p>
-                                        <div>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>            
-                        </div>
-                        <div class="item">
-                            <div class="pad15">
-                                <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                                <div class="information">
-                                    <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
-                                    <div>
-                                        <p></p>
-                                        <div>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pad15">
-                                <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                                <div class="information">
-                                    <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
-                                    <div>
-                                        <p></p>
-                                        <div>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pad15">
-                                <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                                <div class="information">
-                                    <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
-                                    <div>
-                                        <p></p>
-                                        <div>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pad15">
-                                <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                                <div class="information">
-                                    <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
-                                    <div>
-                                        <p></p>
-                                        <div>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pad15">
-                                <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                                <div class="information">
-                                    <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
-                                    <div>
-                                        <p></p>
-                                        <div>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                            <i class="fa fa-star" style="color: #ffc107;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary leftLst"><</button>
-                    <button class="btn btn-primary rightLst">></button>
-                </div>
-            </div>
-        </div> -->
+       
         <!--  -->
         <div class="shiping">
             <div class="shipleft">

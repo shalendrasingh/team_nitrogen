@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total_page</title>
+    <title>Checkout</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -16,16 +14,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link rel="stylesheet" href="../footer/page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
+    
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="./total_page.css">
+    <link rel="stylesheet" href="./checkout.css">
+    
 </head>
 <body>
     
@@ -64,6 +62,7 @@
             <div class="cart__signIn__div">
               <button class="cart__btn">
                 <i class="fa fa-shopping-cart icon-cart"></i>Cart
+                <span id="cartDataShow_tag"></span>
               </button>
               <button class="sign__btn">
                 <i class="fa fa-user icon-signin"></i>Sign In
@@ -100,7 +99,7 @@
                   <a href="./gift_packs_page.html" class="nav-links" id="gift_packs">GIFT PACKS</a>
                 </li>
                 <li>
-                  <a href="../beauty/allproducts.html" class="nav-links">ALL PRODUCTS</a>
+                  <a href="#" class="nav-links">ALL PRODUCTS</a>
                 </li>
                 <li>
                   <a href="#" class="nav-links">BLOG</a>
@@ -111,15 +110,19 @@
 
     <!-- //End Of Header -->
 
-    <div class="total_middle">
-        <div class="total_middle_left" style="border: 1px solid red;">
+    <div class="total_middle " >
+        <div class="total_middle_left"  >
           <div class="user_btn">
             <h4>Already a Registered User?</h4>
             <button>Sign In</button>
           </div>
 
-          <div class="form">
-              <p>SHIPPING & BILLING</p>
+          <div class="form__container" >
+            <div class="ship">
+              <p >SHIPPING & BILLING</p>
+            </div>
+            <div class="form" >
+              
               
            <div class="inp1">
             <div>
@@ -143,24 +146,34 @@
              </div>
 
           </div>
+          <div class="form" >             
+             <div class="inp1">
+                <div>
+                <label for="pincode">PIN Code*</label> <br>
+                <input type="" name="pincode" id="pincode" placeholder="Pincode">
+              </div>
+              <div>
+                <label for="city">City / District</label> <br>
+                <input type="text" name="city" id="city" placeholder="City / District">
+              </div>
+              <div>
+                <label for="state">State*</label> <br>
+                <input type="text" name="state" id="state" placeholder="State">
+             </div>
+             </div>
+             <div class="inp2">
+               
+                  <label for="address">Address 1 (House No, Building, Street, Area) *</label> <br>
+                  <input type="text" id="address" name="address" placeholder="Address (House No, Building, Street, Area) *">
 
-          <div class="form2">
-              <div>
-                <label for="">PIN Code</label> <br>
-                <input type="" name="" id="" placeholder="Pincode">
-              </div>
-              <div>
-                <label for="">City / District</label> <br>
-                <input type="text" name="" id="" placeholder="City / District">
-              </div>
-             <div>
-                <label for="">State</label> <br>
-                <input type="text" name="" id="" placeholder="State">
+                  <label for="address">Address 2 (Locality,Town)</label> <br>
+                  <input type="text" id="address" name="address" placeholder="Locality,Town">
+             
              </div>
 
-          </div> 
+          </div>
 
-          <div class="form3">
+          <!-- <div class="form3">
               <div>
                   <label for="">Address 1 (House No, Building, Street, Area) *</label> <br>
                   <input type="text" placeholder="Address (House No, Building, Street, Area) *">
@@ -171,12 +184,49 @@
                   <input type="text" placeholder="Locality / Town">
               </div>
 
+          </div> -->
           </div>
 
 
         </div>
         <div class="total_middle_right">
-
+<div class="summary_main_container">
+  <div class="purched_item_div" id="purched_item_div"></div>
+      <div class="top_div">
+        <h5> HAVE A COUPON ?</h5>
+        <div class="apply_coupen">
+          <input type="text" placeholder=" ENTER COUPON CODE" />
+          <button class="btn_apply">APPLY</button>
+        </div>
+      </div>
+      <div class="price_div">
+        <div class="item_price_cal">
+          <p>Price Summary</p>
+          <div class="mrp_price">
+            <p>Order Total</p>
+            <sapn>&#8377; 1300</sapn>
+          </div>
+          <div class="dis_price">
+            <p>Items Discount</p>
+            <span class="dis_amnt">&#8377; 756</span>
+          </div>
+          <div class="coupen_dis">
+            <p>Coupen Discount</p>
+            <span class="dis_amnt">&#8377; 0</span>
+            <!-- <button class="btn_apply2">Apply Coupen</button> -->
+          </div>
+           <div class="shipping">
+            <p>Shipping</p>
+            <span class="dis_amnt">&#8377; 0</span>
+          </div>
+        </div>
+        <div class="final_amnt">
+          <h2> Grand Total</h2>
+          <p>&#8377; 578</p>
+        </div>
+        <button class="place_order_btn">PLACE ORDER</button>
+      </div>
+    </div>
         </div>
 
     </div>
@@ -524,7 +574,7 @@
 
 <!-- footer ends -->
 <script src="../footer/page.js"></script>
-
+<script src="checkout.js"></script>
 
 
 </body>
