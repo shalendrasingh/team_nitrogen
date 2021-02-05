@@ -23,6 +23,11 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="./checkout.css">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
 </head>
 <body>
@@ -126,22 +131,26 @@
               
            <div class="inp1">
             <div>
-                <label for="">First Name*</label> <br>
-                <input type="text" name="" id="">
+                <label for="username">First Name*</label> <br>
+                <input type="text" name="username" id="username" required>
+                <p id="error"></p>
              </div>
              <div>
-                <label for="">Last Name*</label> <br>
-                <input type="text" name="" id="">
+                <label for="lastname">Last Name*</label> <br>
+                <input type="text" name="lastname" id="lastname">
+                <p id="error"></p>
              </div>
            </div>
              <div class="inp1">
                 <div>
-                    <label for="">Mobile*</label> <br>
-                    <input type="text" name="" id="">
+                    <label for="mobile">Mobile*</label> <br>
+                    <input type="text" name="mobile" id="mobile">
+                    <p id="error"></p>
                   </div>
                  <div>
-                    <label for="">Email*</label> <br>
-                    <input type="text" name="" id="">
+                    <label for="email">Email*</label> <br>
+                    <input type="text" name="email" id="email">
+                    <p id="error"></p>
                  </div>
              </div>
 
@@ -151,40 +160,34 @@
                 <div>
                 <label for="pincode">PIN Code*</label> <br>
                 <input type="" name="pincode" id="pincode" placeholder="Pincode">
+                <p id="error"></p>
               </div>
               <div>
                 <label for="city">City / District</label> <br>
                 <input type="text" name="city" id="city" placeholder="City / District">
+                <p id="error"></p>
               </div>
               <div>
                 <label for="state">State*</label> <br>
                 <input type="text" name="state" id="state" placeholder="State">
+                <p id="error"></p>
              </div>
              </div>
              <div class="inp2">
                
                   <label for="address">Address 1 (House No, Building, Street, Area) *</label> <br>
                   <input type="text" id="address" name="address" placeholder="Address (House No, Building, Street, Area) *">
+                  <p id="error"></p>
 
-                  <label for="address">Address 2 (Locality,Town)</label> <br>
-                  <input type="text" id="address" name="address" placeholder="Locality,Town">
+                  <label for="address2">Address 2 (Locality,Town)</label> <br>
+                  <input type="text" id="address2" name="address2" placeholder="Locality,Town">
+                  <p id="error"></p>
              
              </div>
 
           </div>
 
-          <!-- <div class="form3">
-              <div>
-                  <label for="">Address 1 (House No, Building, Street, Area) *</label> <br>
-                  <input type="text" placeholder="Address (House No, Building, Street, Area) *">
-              </div>
-
-              <div>
-                  <label for="">Address 2 (Locality, Town)</label> <br>
-                  <input type="text" placeholder="Locality / Town">
-              </div>
-
-          </div> -->
+          
           </div>
 
 
@@ -195,8 +198,8 @@
       <div class="top_div">
         <h5> HAVE A COUPON ?</h5>
         <div class="apply_coupen">
-          <input type="text" placeholder=" ENTER COUPON CODE" />
-          <button class="btn_apply">APPLY</button>
+          <input type="text" name="coupenInput" id="coupenInput" class="coupenInput" placeholder=" ENTER COUPON CODE" />
+          <button class="btn_apply" id="applyBtn">APPLY</button>
         </div>
       </div>
       <div class="price_div">
@@ -204,35 +207,65 @@
           <p>Price Summary</p>
           <div class="mrp_price">
             <p>Order Total</p>
-            <sapn>&#8377; 1300</sapn>
+            <sapn id="total_order_price">&#8377; 1300</sapn>
           </div>
           <div class="dis_price">
             <p>Items Discount</p>
-            <span class="dis_amnt">&#8377; 756</span>
+            <span class="itm_dis_amnt" id="itm_dis_amnt">&#8377; 0</span>
           </div>
           <div class="coupen_dis">
             <p>Coupen Discount</p>
-            <span class="dis_amnt">&#8377; 0</span>
-            <!-- <button class="btn_apply2">Apply Coupen</button> -->
+            <span class="coup_dis_amnt" id="coup_dis_amnt">&#8377; 0</span>
+           
           </div>
            <div class="shipping">
             <p>Shipping</p>
-            <span class="dis_amnt">&#8377; 0</span>
+            <span class="dis_amnt" id="shipping_amt">&#8377; 40</span>
           </div>
         </div>
         <div class="final_amnt">
           <h2> Grand Total</h2>
-          <p>&#8377; 578</p>
+          <p id="grand__total" class="grand__total">&#8377; 0</p>
         </div>
-        <button class="place_order_btn">PLACE ORDER</button>
+        <button class="place_order_btn"  id="place_order_btn" data-toggle="modal" data-target="#myModal" onclick="checkError()">PLACE ORDER</button>
       </div>
     </div>
         </div>
 
     </div>
 
+    
+    
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Thank you for shopping with us!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         Your Product will be delivered soon.
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Have a nice day !!</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
-    <!-- footer start -->
+
+
+    
+
+
+    <!-- footer start-->
 
  <!-- class Help will be on top -->
  <div id="help">
@@ -277,124 +310,7 @@
     <h3>What Our Customers Say</h3>
     <img src="https://mamaearthp.imgix.net/wysiwyg/strip2x.png?auto=format" style="height: 1.75px; width: 20vw; margin-right: 10px; margin-top: -30px;">
 </div>
-<div class="container">
-    <div class="row">
-        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
-            <div class="MultiCarousel-inner">
-                <div class="item">
-                    <div class="pad15">
-                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                        <div class="information">
-                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Akanksha_Upadhyay.jpg?auto=format" >
-                            <div>
-                                <p></p>
-                                <div>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>            
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                        <div class="information">
-                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Manisha.jpg?auto=format" >
-                            <div>
-                                <p></p>
-                                <div>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                        <div class="information">
-                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
-                            <div>
-                                <p></p>
-                                <div>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                        <div class="information">
-                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Priyanshi_Singh.jpg?auto=format" >
-                            <div>
-                                <p></p>
-                                <div>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                        <div class="information">
-                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Waris_Raza.jpg?auto=format" >
-                            <div>
-                                <p></p>
-                                <div>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p>I use Mamaearth Ubtan Face Wash. It gives me an instant natural glow. I love that the products are natural and don't contain any harmful preservatives. Plus the products are quite affordable.</p>
-                        <div class="information">
-                            <img alt="Sajal Goyal" src="https://mamaearthp.imgix.net/wysiwyg/Sajal_Goyal_GKFmIuZ.jpg?auto=format" >
-                            <div>
-                                <p></p>
-                                <div>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                    <i class="fas fa-star" style="color: #ffc107;"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-primary leftLst"><</button>
-            <button class="btn btn-primary rightLst">></button>
-        </div>
-    </div>
-</div>
+
 <!--  -->
 <div class="shiping">
     <div class="shipleft">
@@ -541,9 +457,7 @@
                 </li>
               </ul>
             </div>
-            <!-- <div class="col-rig">
-                <img style="width: 10%; height: 10%;" src="https://mamaearthp.imgix.net/wysiwyg/Best-Brand500x5002x.png" alt="">
-            </div> -->
+            
             <!--Grid column-->
           </div>
           <!--Grid row-->

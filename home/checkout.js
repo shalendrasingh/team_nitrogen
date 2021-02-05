@@ -1,5 +1,4 @@
 let cartDataShow_tag = document.getElementById("cartDataShow_tag");
-// // cartDataShow_tag.innerHTML;
 
 function cartDataShowFunc() {
   let fetchDataFromLocalStr = localStorage.getItem("order");
@@ -30,11 +29,6 @@ function displaytoCheckoutPage() {
 let purched_item = document.getElementById("purched_item_div");
 console.log(purched_item, " puchseitem");
 function printDataToCheckoutPage(data) {
-  //   console.log(data);
-  // purched_item = document.querySelector("#purched_item_div");
-  // console.log(purched_item);
-  // .innerHTML = data[0].id;
-  // let cartCard;
   for (i in data) {
     let cartCard = document.createElement("div");
     cartCard.className = "cartCard";
@@ -77,17 +71,14 @@ function printDataToCheckoutPage(data) {
     let buttonMainDiv = document.createElement("div");
     buttonMainDiv.className = "buttonMainDiv";
     let iconDel = document.createElement("i");
-    iconDel.className = "fa fa-trash";
+    iconDel.className = "fa fa-tras delete";
+    iconDel.setAttribute("onclick", `deleteData(${data[i].id})`);
 
     buttonDiv.append(minusSpan, itemSpan, plusSpan);
     buttonMainDiv.append(buttonDiv, iconDel);
     secondDiv.append(pDesc, priceTag, buttonMainDiv);
     imgDiv.append(imgTag);
     cartCard.append(imgDiv, secondDiv);
-    // console.log(cartCard);
-    // console.log(purched_item);
-
-    // document.getElementById("purched_item_div").innerHTML = cartCard;
     console.log(purched_item);
 
     purched_item.append(cartCard);
@@ -128,14 +119,11 @@ function plusItem(id) {
 }
 
 function minusItem(id) {
-  //   console.log(id);
   let dataComesFromLs = localStorage.getItem("order");
   dataComesFromLs = JSON.parse(dataComesFromLs);
 
   let addPlusItem = dataComesFromLs.filter((item) => {
     if (item.id === id) {
-      //   item.price = Number(item.price) - Number(item.price);
-      //   item.quantity = item.quantity - 1;
       return (item.quantity = item.quantity - 1);
     } else {
       return item;
@@ -168,4 +156,92 @@ window.addEventListener("load", () => {
   displaytoCheckoutPage();
 });
 
-// ls ke orders se item.price + karna reduce karna hai fir total me dekhana hai
+function showTotalPrice() {
+  let select = document.getElementById("total_order_price");
+  select.innerHTML = "";
+  let getPriceFromLsToshow = localStorage.getItem("order");
+  getPriceFromLsToshow = JSON.parse(getPriceFromLsToshow);
+  let amntP = getPriceFromLsToshow[0].price;
+  select.innerHTML = "₹ " + amntP;
+  let reduceFunc = getPriceFromLsToshow.filter((item) => {
+    return item.price;
+  });
+  console.log(reduceFunc);
+}
+
+showTotalPrice();
+
+let coupenInputValue = document.getElementById("coupenInput");
+coupenInputValue.value;
+console.log(coupenInputValue);
+
+let applyButton = document
+  .getElementById("applyBtn")
+  .addEventListener("click", applyDiscountOnitem);
+
+let getPriceFromLsTos = localStorage.getItem("order");
+getPriceFromLsTos = JSON.parse(getPriceFromLsTos);
+let amnt = getPriceFromLsTos[0].price;
+document.getElementById("grand__total").innerHTML = "₹ " + amnt;
+
+function applyDiscountOnitem() {
+  let inputDisValue = coupenInputValue.value;
+
+  console.log(amnt);
+  if (inputDisValue === "OFF40") {
+    document.getElementById("itm_dis_amnt").innerHTML = "₹ " + (amnt - 40);
+    // document.getElementById("shipping_amt").textContent=am;
+    document.getElementById("coup_dis_amnt").innerHTML = "₹ " + 40;
+    document.getElementById("grand__total").innerHTML = "₹ " + amnt;
+  } else {
+    alert("Invalid Coupon");
+  }
+}
+// applyDiscountOnitem();
+
+let obj = [];
+
+function checkError() {
+  let user = document.getElementById("username").value;
+  let lastN = document.getElementById("lastname").value;
+  let mob = document.getElementById("mobile").value;
+  let emailU = document.getElementById("email").value;
+  let pin = document.getElementById("pincode").value;
+  let cit = document.getElementById("city").value;
+  let stat = document.getElementById("state").value;
+  let add = document.getElementById("address").value;
+  let add2 = document.getElementById("address2").value;
+
+  console.log(user, lastN, mob, emailU, pin, cit, stat, add, add2);
+
+  payload = {
+    user,
+    lastN,
+    mob,
+    emailU,
+    pin,
+    cit,
+    stat,
+    add,
+    add2,
+  };
+
+  if (
+    user === "" ||
+    lastN === "" ||
+    mob === "" ||
+    emailU === "" ||
+    pin === "" ||
+    cit === "" ||
+    stat === "" ||
+    add === "" ||
+    add2 === ""
+  ) {
+    alert("please fill detail * field");
+  } else {
+    obj.push(payload);
+  }
+  // localStorage.clear("order");
+}
+
+console.log(obj);
