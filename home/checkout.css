@@ -558,6 +558,7 @@ input::placeholder {
 .secondDiv {
   display: flex;
   flex-direction: column;
+  color: #303030;
 }
 
 .pDesc {

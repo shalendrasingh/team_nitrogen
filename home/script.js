@@ -1507,3 +1507,11 @@ function redirectToclick_cartbtnPage() {
     location = "./checkout.html";
   });
 }
+
+document.getElementById("login_btn").addEventListener("click", redirectologin);
+
+function redirectologin() {
+  return Promise.resolve().then(() => {
+    location = "../footer/login.html";
+  });
+}

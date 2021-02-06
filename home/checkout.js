@@ -265,8 +265,8 @@ function checkError() {
     localStorage.clear();
     localStorage.setItem("userDetails", JSON.stringify(obj));
 
-    window.location.reload();
-    window.location = "index.html";
+    // window.location.reload();
+    // window.location = "index.html";
   }
 }
 
