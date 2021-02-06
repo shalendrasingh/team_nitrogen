@@ -236,3 +236,32 @@
 .dropdown1:hover .contentrow{
   display: block;
 }
+
+#secondHelp{
+  width: 320px;
+  height: 450px;
+  background-color: #41A8DD;
+  border-radius: 10px;
+  position: fixed;
+  flex-direction: column;
+  transform: translate(320%, 22%);
+  z-index: 2;
+}
+#topHelp{
+  background-color: rgb(0,143,0);
+  flex-basis: 25%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#topHelp > div{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+#topHelp > div
+#midHelp{
+  flex-basis: 70%;
+}
+#lowHelp{
+  flex-basis: 5%;
+}
