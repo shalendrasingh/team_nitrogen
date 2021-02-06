@@ -38,12 +38,14 @@ $(document).ready(function () {
             if (bodyWidth >= 1200) {
                 incno = itemsSplit[1];
                 itemWidth = sampwidth / incno;
-            }
-            else {
+            } else {
                 incno = itemsSplit[0];
                 itemWidth = sampwidth / incno;
             }
-            $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+            $(this).css({
+                'transform': 'translateX(0px)',
+                'width': itemWidth * itemNumbers
+            });
             $(this).find(itemClass).each(function () {
                 $(this).outerWidth(itemWidth);
             });
@@ -71,8 +73,7 @@ $(document).ready(function () {
                 translateXval = 0;
                 $(el + ' ' + leftBtn).addClass("over");
             }
-        }
-        else if (e == 1) {
+        } else if (e == 1) {
             var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
             translateXval = parseInt(xds) + parseInt(itemWidth * s);
             $(el + ' ' + leftBtn).removeClass("over");
@@ -95,26 +96,23 @@ $(document).ready(function () {
 });
 
 
-let arrayOfNumber = [9876543210,8563912423,1234567890,9638527410]
-window.addEventListener('load',function(){
-    let btnInput = document.getElementById('loginBtn').addEventListener('click',goPage)
-})
-
-function goPage(){
-    let inpValue = document.getElementById('mobileNoEnter').value
-    inpValue = Number(inpValue)
-    // console.log(inpValue)
-    let flag = false
-    for(let i=0;i<arrayOfNumber.length;i++){
-        if(inpValue===arrayOfNumber[i]){
-            flag = true
+$(document).ready(function () {
+    let arn = [9876543210, 8563912423, 1234567890, 9638527410]
+    $('#loginBtn').click(function () {
+        let valu = $('#mobileNoEnter').val()
+        valu = Number(valu)
+        // console.log(valu)
+        let flag = false
+        for(let i=0;i<arn.length;i++){
+            if(arn[i]===valu){
+                flag = true
+            }
         }
-    }
-    if(flag===true){
-        let hp = document.getElementById('home').href
-        // alert(hp)
-        location = hp
-    }else{
-        // alert('Enter Valid Mobile Number or Check again')
-    }
-}
+        if(flag===true){
+            let loc = $(location).href('../home/index.html')
+            console.log(loc)
+        }else{
+            alert('Enter Valid Mobile Number or Check again')
+        }
+    })
+})
