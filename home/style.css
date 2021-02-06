@@ -17,6 +17,9 @@
   font-weight: 300;
   font-size: 12px;
 }
+a:hover {
+  text-decoration: none !important;
+}
 .offers > p {
   margin: 5px;
 }

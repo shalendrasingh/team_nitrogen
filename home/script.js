@@ -60,7 +60,7 @@ function generateData(data) {
     let card = createUserCard(data[i], data[i].id);
     // console.log(data[i].id);
     appData.append(card);
-    console.log(card);
+    // console.log(card);
     // appData.innerHTML = card;
   }
 }
@@ -68,7 +68,7 @@ function generateData(data) {
 // code for create card
 
 function createUserCard(item, id) {
-  console.log("object");
+  // console.log("object");
   let image = document.createElement("img");
   image.className = "img";
   image.src = item.img;
@@ -98,12 +98,21 @@ function createUserCard(item, id) {
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
   // console.log(add_cart_btn, "qqqqqqq");
   let card = document.createElement("div");
+
   card.classList.add("card");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
 
   rating__span.appendChild(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card.append(image, description__div, price_tag, rating__div);
-  console.log("wertyui");
+  card.append(image, description__div, price_tag, rating__div, tag);
+  // console.log("wertyui");
   return card;
 }
 
@@ -111,7 +120,7 @@ let arrForLs = [];
 let arrForPrice = [];
 function showData(id) {
   // // alert();
-  console.log(id);
+  // console.log(id);
   let conditionChekLs = localStorage.getItem("order");
   conditionChekLs = JSON.parse(conditionChekLs);
 
@@ -125,7 +134,7 @@ function showData(id) {
       }
     });
 
-    console.log(orders);
+    // console.log(orders);
 
     let cartShow = {
       id: orders[0].id,
@@ -141,7 +150,7 @@ function showData(id) {
       price: orders[0].price,
     };
 
-    console.log(cartShow);
+    // console.log(cartShow);
 
     arrForLs.push(cartShow);
     arrForPrice.push(priceShow);
@@ -166,10 +175,10 @@ function showData(id) {
 
       localStorage.setItem("order", JSON.stringify(ordersChecks));
     }
-    console.log(count, " count 1");
+    // console.log(count, " count 1");
 
     if (count == 0) {
-      console.log(count, " count m");
+      // console.log(count, " count m");
       let getDataFromLs = localStorage.getItem("cart");
       getDataFromLs = JSON.parse(getDataFromLs);
 
@@ -179,7 +188,7 @@ function showData(id) {
         }
       });
 
-      console.log(orders);
+      // console.log(orders);
 
       let cartShow = {
         id: orders[0].id,
@@ -203,7 +212,7 @@ function showData(id) {
       localStorage.setItem("order", JSON.stringify(arrForLs));
       localStorage.setItem("price", JSON.stringify(arrForPrice));
     }
-    console.log(arrForLs, " erro");
+    // console.log(arrForLs, " erro");
   }
 
   cartDataShowFunc();
@@ -212,7 +221,7 @@ function cartDataShowFunc() {
   let fetchDataFromLocalStr = localStorage.getItem("order");
   fetchDataFromLocalStr = JSON.parse(fetchDataFromLocalStr);
   // fetchDataFromLocalStr.length == 0 ||
-  if (fetchDataFromLocalStr == null) {
+  if (fetchDataFromLocalStr == null || fetchDataFromLocalStr.length === 0) {
     cartDataShow_tag.innerHTML = "";
   } else {
     cartDataShow_tag.innerHTML = fetchDataFromLocalStr.length;
@@ -292,7 +301,7 @@ async function getData2() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   //  localStorage.setItem("cart", JSON.stringify(addToLs));
   generateData2(data);
@@ -340,9 +349,17 @@ function createUserCard2(item, id) {
 
   let card2 = document.createElement("div");
   card2.classList.add("card");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card2.append(image, description__div, price_tag, rating__div);
+  card2.append(image, description__div, price_tag, rating__div, tag);
 
   return card2;
 }
@@ -401,7 +418,7 @@ async function getData3(val = 5) {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   // console.log(data);
   generateData3(data);
@@ -448,11 +465,19 @@ function createUserCard3(item, id) {
   add_cart_btn.setAttribute("id", "buy_btn3");
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
+
   let card3 = document.createElement("div");
   card3.classList.add("card");
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card3.append(image, description__div, price_tag, rating__div);
+  card3.append(image, description__div, price_tag, rating__div, tag);
 
   return card3;
 }
@@ -511,7 +536,7 @@ async function getData4() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData4(data);
 }
@@ -556,12 +581,19 @@ function createUserCard4(item, id) {
   add_cart_btn.className = "btn addBtn";
   add_cart_btn.setAttribute("id", "buy_btn4");
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
 
   let card4 = document.createElement("div");
   card4.classList.add("card");
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card4.append(image, description__div, price_tag, rating__div);
+  card4.append(image, description__div, price_tag, rating__div, tag);
 
   return card4;
 }
@@ -620,7 +652,7 @@ async function getData5() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData5(data);
 }
@@ -665,12 +697,18 @@ function createUserCard5(item, id) {
   add_cart_btn.className = "btn addBtn";
   add_cart_btn.setAttribute("id", "buy_btn5");
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
 
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   let card5 = document.createElement("div");
   card5.classList.add("card");
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card5.append(image, description__div, price_tag, rating__div);
+  card5.append(image, description__div, price_tag, rating__div, tag);
 
   return card5;
 }
@@ -729,7 +767,7 @@ async function getData6() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData6(data);
 }
@@ -775,11 +813,19 @@ function createUserCard6(item, id) {
   add_cart_btn.setAttribute("id", "buy_btn6");
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
+
   let card6 = document.createElement("div");
   card6.classList.add("card");
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card6.append(image, description__div, price_tag, rating__div);
+  card6.append(image, description__div, price_tag, rating__div, tag);
 
   return card6;
 }
@@ -838,7 +884,7 @@ async function getData7() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData7(data);
 }
@@ -886,9 +932,17 @@ function createUserCard7(item, id) {
 
   let card7 = document.createElement("div");
   card7.classList.add("card");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card7.append(image, description__div, price_tag, rating__div);
+  card7.append(image, description__div, price_tag, rating__div, tag);
 
   return card7;
 }
@@ -946,7 +1000,7 @@ async function getData8() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   // console.log(data);
   generateData8(data);
@@ -995,9 +1049,17 @@ function createUserCard8(item, id) {
 
   let card8 = document.createElement("div");
   card8.classList.add("card");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card8.append(image, description__div, price_tag, rating__div);
+  card8.append(image, description__div, price_tag, rating__div, tag);
 
   return card8;
 }
@@ -1056,7 +1118,7 @@ async function getData9() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData9(data);
 }
@@ -1103,10 +1165,18 @@ function createUserCard9(item, id) {
   add_cart_btn.setAttribute("onclick", `showData(${id})`);
 
   let card9 = document.createElement("div");
+
+  let tag = document.createElement("div");
+  tag.className = "tagsname";
+
+  let tagname = document.createElement("div");
+  tagname.className = "tag";
+  tagname.textContent = "Best Seller";
+  tag.append(tagname);
   card9.classList.add("card");
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);
-  card9.append(image, description__div, price_tag, rating__div);
+  card9.append(image, description__div, price_tag, rating__div, tag);
 
   return card9;
 }
@@ -1165,7 +1235,7 @@ async function getData10() {
   for (let i = 0; i < data.length; i++) {
     getCartlsdata.push(data[i]);
   }
-  console.log(getCartlsdata, "singh");
+  // console.log(getCartlsdata, "singh");
   localStorage.setItem("cart", JSON.stringify(getCartlsdata));
   generateData10(data);
 }
@@ -1257,7 +1327,7 @@ let searchBtn = document
 
 function handleSearchData() {
   let value = searchInputValue.value;
-  console.log(value);
+  // console.log(value);
   let search_result__display = document.querySelector("#search_result");
   search_result__display.innerHTML = "";
 
@@ -1265,7 +1335,7 @@ function handleSearchData() {
     .then((res) => res.json())
     .then((res) => {
       search_result__display.innerHTML = res;
-      console.log(res);
+      // console.log(res);
       generateData11(res);
     });
 }
@@ -1317,7 +1387,7 @@ function createUserCard11(item) {
 
   let tagname = document.createElement("div");
   tagname.className = "tag";
-  tagname.textContent = "Best Seller";
+  tagname.textContent = "New Launch";
   tag.append(tagname);
   rating__span.append(icon);
   rating__div.append(rating__span, add_cart_btn);

@@ -518,14 +518,16 @@ input::placeholder {
   font-weight: 300;
   font-size: 12px;
 }
+.final_amnt > h2 {
+  font-size: 16px;
+}
 .place_order_btn {
   width: 95%;
   margin: auto;
   height: 35px;
   border: none;
-  background-color: #5ACFFA;
+  background-color: #5acffa;
   color: white;
-
 }
 
 .purched_item_div {

@@ -4,7 +4,7 @@ function cartDataShowFunc() {
   let fetchDataFromLocalStr = localStorage.getItem("order");
   fetchDataFromLocalStr = JSON.parse(fetchDataFromLocalStr);
 
-  if (fetchDataFromLocalStr.length == 0) {
+  if (fetchDataFromLocalStr.length === 0) {
     cartDataShow_tag.innerHTML = "";
   } else {
     cartDataShow_tag.innerHTML = fetchDataFromLocalStr.length;
@@ -15,7 +15,7 @@ cartDataShowFunc();
 function displaytoCheckoutPage() {
   let dataComesFromLs = localStorage.getItem("order");
   dataComesFromLs = JSON.parse(dataComesFromLs);
-  console.log(dataComesFromLs + "aa gay");
+  // console.log(dataComesFromLs + "aa gay");
 
   if (dataComesFromLs !== null) {
     printDataToCheckoutPage(dataComesFromLs);
@@ -23,11 +23,11 @@ function displaytoCheckoutPage() {
     alert("cart is empty add some thig to cart");
   }
 
-  console.log(dataComesFromLs);
+  // console.log(dataComesFromLs);
 }
 
 let purched_item = document.getElementById("purched_item_div");
-console.log(purched_item, " puchseitem");
+// console.log(purched_item, " puchseitem");
 function printDataToCheckoutPage(data) {
   for (i in data) {
     let cartCard = document.createElement("div");
@@ -79,7 +79,7 @@ function printDataToCheckoutPage(data) {
     secondDiv.append(pDesc, priceTag, buttonMainDiv);
     imgDiv.append(imgTag);
     cartCard.append(imgDiv, secondDiv);
-    console.log(purched_item);
+    // console.log(purched_item);
 
     purched_item.append(cartCard);
   }
@@ -105,11 +105,13 @@ function plusItem(id) {
       return;
     }
   });
-  console.log(retPrice);
+  // console.log(retPrice);
 
   let final = addPlusItem.filter((item) => {
     if (item.id === id) {
       return (item.price += retPrice);
+    } else {
+      return item;
     }
   });
 
@@ -139,11 +141,13 @@ function minusItem(id) {
       return;
     }
   });
-  console.log(retPrice);
+  // console.log(retPrice);
 
   let final = addPlusItem.filter((item) => {
     if (item.id === id) {
       return (item.price -= retPrice);
+    } else {
+      return item;
     }
   });
 
@@ -161,19 +165,27 @@ function showTotalPrice() {
   select.innerHTML = "";
   let getPriceFromLsToshow = localStorage.getItem("order");
   getPriceFromLsToshow = JSON.parse(getPriceFromLsToshow);
-  let amntP = getPriceFromLsToshow[0].price;
-  select.innerHTML = "₹ " + amntP;
-  let reduceFunc = getPriceFromLsToshow.filter((item) => {
+  let amntP = getPriceFromLsToshow.map((item) => {
     return item.price;
   });
-  console.log(reduceFunc);
+
+  let finalTotalPrice = amntP.reduce((a, b) => {
+    return a + b;
+  });
+
+  select.innerHTML = "₹ " + finalTotalPrice;
+
+  // let reduceFunc = getPriceFromLsToshow.filter((item) => {
+  //   return item.price;
+  // });
+  // console.log(reduceFunc);
 }
 
 showTotalPrice();
 
 let coupenInputValue = document.getElementById("coupenInput");
 coupenInputValue.value;
-console.log(coupenInputValue);
+// console.log(coupenInputValue);
 
 let applyButton = document
   .getElementById("applyBtn")
@@ -181,18 +193,27 @@ let applyButton = document
 
 let getPriceFromLsTos = localStorage.getItem("order");
 getPriceFromLsTos = JSON.parse(getPriceFromLsTos);
-let amnt = getPriceFromLsTos[0].price;
-document.getElementById("grand__total").innerHTML = "₹ " + amnt;
+let amnt = getPriceFromLsTos.map((item) => {
+  return item.price;
+});
+
+let finalTotalPrice = amnt.reduce((a, b) => {
+  return a + b;
+});
+
+// console.log(finalTotalPrice);
+document.getElementById("grand__total").innerHTML = "₹ " + finalTotalPrice;
 
 function applyDiscountOnitem() {
   let inputDisValue = coupenInputValue.value;
 
-  console.log(amnt);
+  // console.log(amnt);
   if (inputDisValue === "OFF40") {
-    document.getElementById("itm_dis_amnt").innerHTML = "₹ " + (amnt - 40);
+    document.getElementById("itm_dis_amnt").innerHTML =
+      "₹ " + (finalTotalPrice - 40);
     // document.getElementById("shipping_amt").textContent=am;
     document.getElementById("coup_dis_amnt").innerHTML = "₹ " + 40;
-    document.getElementById("grand__total").innerHTML = "₹ " + amnt;
+    document.getElementById("grand__total").innerHTML = "₹ " + finalTotalPrice;
   } else {
     alert("Invalid Coupon");
   }
@@ -212,7 +233,7 @@ function checkError() {
   let add = document.getElementById("address").value;
   let add2 = document.getElementById("address2").value;
 
-  console.log(user, lastN, mob, emailU, pin, cit, stat, add, add2);
+  // console.log(user, lastN, mob, emailU, pin, cit, stat, add, add2);
 
   payload = {
     user,
@@ -240,8 +261,13 @@ function checkError() {
     alert("please fill detail * field");
   } else {
     obj.push(payload);
+
+    localStorage.clear();
+    localStorage.setItem("userDetails", JSON.stringify(obj));
+
+    window.location.reload();
+    window.location = "index.html";
   }
-  // localStorage.clear("order");
 }
 
-console.log(obj);
+// console.log(obj);
