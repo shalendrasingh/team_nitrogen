@@ -187,4 +187,41 @@
   Blog Link:  <b>?</b>
 </div> -->
 
+
+<hr></hr>
+
+<h1></h1>
+
+ 👤 Shalendra Singh
+ <ul>
+ <li>Github : shalendrasingh
+ <li>Email : shalendrasingh.aec@gmail.com
+ </ul>
+<h1></h1>
+ 👤 Rajat Sahu 
+ <ul>
+ <li>Github : rajatsahu18
+ <li>Email : (sahurajat78@gmail.com)
+ </ul>
+
+ 
+<h1></h1>
+
+<h1></h1>
+
+ 👤 Sohail shaik
+ <ul>
+ <li>Github : sohailshaik8328
+ <li>Email : (sohailshaik765@gmail.com)
+ </ul>
+
+<h1></h1>
+
+👤 Ankur 
+ <ul>
+ <li>Github : ankurpoplu
+ <li>Email : (ankurp31031@gmail.com)
+ </ul>
+
+ <h1></h1>
 ## Thank u for giving it a read................
