@@ -37,7 +37,8 @@
 
 #### we start from the Home Page where all the products are listed and many categories of products are available for shopping<br /><br />
 
-<img width="929" alt="hh" src="./images/1h.png"><br /><br />
+![Screenshot (1155)](https://user-images.githubusercontent.com/61904192/126821819-ec6be36c-c55c-4b61-86ba-6b87893825ba.png)
+
 
 <!-- **\*\***Taking one at a time\***\*\*\*\*\*** -->
 
